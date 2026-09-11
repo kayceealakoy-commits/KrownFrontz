@@ -1,0 +1,28 @@
+{
+  "name": "krown-frontz",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "sync-pricing": "python scripts/sync-pricing-lib.py",
+    "sync-images": "python scripts/sync_images.py",
+    "deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy-to-netlify.ps1",
+    "dev": "netlify dev",
+    "verify-stripe": "node scripts/verify-stripe-env.js",
+    "verify-production-env": "node scripts/verify-production-env.js",
+    "verify-security-headers": "node scripts/verify-security-headers.js",
+    "netlify-status": "node scripts/netlify-go-live-api.js status",
+    "netlify-check-env": "node scripts/netlify-go-live-api.js check-env",
+    "go-live": "powershell -ExecutionPolicy Bypass -File scripts/go-live-stripe.ps1",
+  "create-stripe-live-webhook": "node scripts/create-stripe-live-webhook.js",
+  "disable-netlify-sso": "node scripts/disable-netlify-sso.js",
+    "test-checkout-logic": "node scripts/test-checkout-logic.js",
+    "test-security-validation": "node scripts/test-security-validation.js",
+    "postinstall": "npm run sync-pricing"
+  },
+  "dependencies": {
+    "stripe": "^17.7.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^23.0.0"
+  }
+}

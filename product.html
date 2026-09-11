@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product — Krown Frontz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="Krown Frontz" width="320" height="88" />
+        <span class="nav-slogan">Your Krown, His Glory</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="cart-link" href="checkout.html">Cart (0)</a>
+    </header>
+    <div class="nav-drawer" id="nav-drawer" hidden>
+      <nav class="nav-drawer-links" aria-label="Mobile">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="book.html">Book</a>
+      </nav>
+    </div>
+    <main class="product-detail">
+      <div id="product-gallery" class="gallery product-image gold" role="img">Dental Gold</div>
+      <div class="options">
+        <p class="eyebrow" id="product-eyebrow">Basics</p>
+        <h1 id="product-title">Canine</h1>
+        <p id="product-blurb">Single canine cap. Custom-fitted.</p>
+        <p class="detail-price" id="product-price">£60</p>
+        <p class="price-note grillz-only">Price updates with material.</p>
+        <div class="option-group grillz-only">
+          <label for="tooth-picker">Select teeth</label>
+          <div id="tooth-picker" class="tooth-picker" aria-describedby="tooth-picker-helper"></div>
+        </div>
+        <div class="option-group grillz-only">
+          <label for="material-select">Material</label>
+          <select id="material-select" name="material" class="option-select" aria-label="Material"></select>
+        </div>
+        <div class="option-group grillz-only hand-set-diamond-only" hidden>
+          <label for="stone-select">Stone</label>
+          <select id="stone-select" name="stone" class="option-select" aria-label="Stone"></select>
+        </div>
+        <div class="kit-only" hidden>
+          <p class="kit-attempts-note" id="kit-attempts-note">Includes enough materials for 2 attempts.</p>
+          <div class="kit-contents">
+            <h2>What's included</h2>
+            <ul id="kit-contents-list"></ul>
+          </div>
+          <p class="kit-instructions-note">
+            Watch the <a data-impression-instructions href="#">instructions</a>
+            — video guide for taking your impression at home.
+          </p>
+          <p class="kit-return-note" id="kit-return-note" hidden></p>
+        </div>
+        <div class="giftcard-only" hidden>
+          <div class="option-group">
+            <label for="gift-card-amount">Amount</label>
+            <select id="gift-card-amount" name="gift-card-amount" class="option-select" aria-label="Gift card amount"></select>
+          </div>
+        </div>
+        <div class="service-only" hidden>
+          <fieldset class="option-group service-fulfillment">
+            <legend>How will you get your set to us?</legend>
+            <label class="service-fulfillment-option">
+              <input type="radio" name="repolish-fulfillment" value="postal" checked />
+              <span>
+                <strong>Post your set</strong>
+                Pay for outbound return shipping at checkout. After payment we’ll email the studio return address so you can send your grillz in.
+              </span>
+            </label>
+            <label class="service-fulfillment-option">
+              <input type="radio" name="repolish-fulfillment" value="dropoff" />
+              <span>
+                <strong>Drop off in person</strong>
+                No shipping. DM
+                <a href="https://instagram.com/krownfrontz" rel="noopener noreferrer">@krownfrontz</a>
+                to arrange Manchester drop-off and pickup.
+              </span>
+            </label>
+          </fieldset>
+        </div>
+        <aside class="postal-kit-notice grillz-only">
+          <p>
+            <strong>Postal orders:</strong> Add an impression kit to your cart alongside your grillz.
+            <a href="product.html?id=impression-kit-uk">UK kit</a>
+            ·
+            <a href="product.html?id=impression-kit-international">International kit</a>
+          </p>
+        </aside>
+        <div class="cta-row">
+          <button type="button" class="btn btn-primary" id="add-to-cart-btn">Add to cart</button>
+          <a class="btn btn-secondary grillz-only" href="book.html?design=1">Book impression</a>
+        </div>
+        <aside class="custom-quote-banner grillz-only">
+          <p>
+            For fully custom designs, email
+            <a href="mailto:krownfrontz@gmail.com">krownfrontz@gmail.com</a>
+            or DM
+            <a href="https://instagram.com/krownfrontz" rel="noopener noreferrer">@krownfrontz</a>
+            on Instagram for a quote.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div>
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="" width="220" height="64" />
+        <p>Manchester, UK</p>
+        <p class="footer-slogan">Your Krown, His Glory</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All styles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="shipping.html">Shipping policy</a>
+        <a href="refund-policy.html">Refund policy</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-of-service.html">Terms of service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:krownfrontz@gmail.com">krownfrontz@gmail.com</a>
+        <a href="https://instagram.com/krownfrontz" rel="noopener noreferrer">@krownfrontz</a>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="tooth-picker.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

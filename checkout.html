@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout — Krown Frontz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="Krown Frontz" width="320" height="88" />
+        <span class="nav-slogan">Your Krown, His Glory</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="cart-link" href="checkout.html">Cart (0)</a>
+    </header>
+    <div class="nav-drawer" id="nav-drawer" hidden>
+      <nav class="nav-drawer-links" aria-label="Mobile">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="book.html">Book</a>
+      </nav>
+    </div>
+    <main>
+      <div class="page-title section">
+        <p class="eyebrow">Cart</p>
+        <h1>Checkout</h1>
+        <p class="lede">Review your cart and shipping. You will pay securely via Stripe in GBP.</p>
+      </div>
+      <section class="checkout-layout">
+        <form class="form-grid" id="checkout-form">
+          <div class="form-grid two">
+            <label class="field">First name<input name="first" required /></label>
+            <label class="field">Last name<input name="last" required /></label>
+          </div>
+          <label class="field">Email<input type="email" name="email" required /></label>
+          <label class="field">Address line 1<input name="line1" required /></label>
+          <label class="field">Address line 2<input name="line2" /></label>
+          <div class="form-grid two">
+            <label class="field">City<input name="city" required /></label>
+            <label class="field">Postcode<input name="postcode" required /></label>
+          </div>
+          <label class="field">Country
+            <select name="country">
+              <option value="uk">United Kingdom</option>
+              <option value="ireland">Ireland</option>
+              <option value="europe-eu">Europe (EU)</option>
+              <option value="europe-non-eu">Europe (non-EU)</option>
+              <option value="us-canada">United States &amp; Canada</option>
+              <option value="australia-nz">Australia &amp; New Zealand</option>
+              <option value="middle-east">Middle East</option>
+              <option value="asia">Asia</option>
+              <option value="africa">Africa</option>
+              <option value="south-america">South &amp; Central America</option>
+              <option value="rest-of-world">Rest of World</option>
+            </select>
+          </label>
+          <p class="field-hint">See <a href="shipping.html">shipping policy</a> for rates and delivery times by region.</p>
+          <button class="btn btn-primary" type="submit" id="checkout-submit-btn">Pay with Stripe</button>
+        </form>
+        <aside class="summary">
+          <h2>Your cart</h2>
+          <p class="checkout-empty" id="cart-empty" hidden>Your cart is empty. <a href="shop.html">Browse the shop</a>.</p>
+          <div class="cart-lines" id="cart-lines"></div>
+          <div id="checkout-shipping">
+            <div class="summary-row" id="summary-kit-shipping-row" hidden>
+              <span>Kit shipping (outbound)</span><span id="summary-kit-shipping">—</span>
+            </div>
+            <div class="summary-row" id="summary-finish-shipping-row" hidden>
+              <span>Outbound shipping</span><span id="summary-finish-shipping">£6.99</span>
+            </div>
+            <div class="summary-row total"><span>Due now (placeholder)</span><span id="summary-total">—</span></div>
+          </div>
+          <p class="checkout-notice" id="checkout-notice" hidden></p>
+          <p class="lede">Piece balance (if any) is separate from shipping. Charged in GBP via Stripe.</p>
+        </aside>
+      </section>
+    </main>
+    <footer class="footer">
+      <div>
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="" width="220" height="64" />
+        <p>Manchester, UK</p>
+        <p class="footer-slogan">Your Krown, His Glory</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All styles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="shipping.html">Shipping policy</a>
+        <a href="refund-policy.html">Refund policy</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-of-service.html">Terms of service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:krownfrontz@gmail.com">krownfrontz@gmail.com</a>
+        <a href="https://instagram.com/krownfrontz" rel="noopener noreferrer">@krownfrontz</a>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="tooth-picker.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book impression — Krown Frontz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="Krown Frontz" width="320" height="88" />
+        <span class="nav-slogan">Your Krown, His Glory</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="cart-link" href="checkout.html">Cart (0)</a>
+    </header>
+    <div class="nav-drawer" id="nav-drawer" hidden>
+      <nav class="nav-drawer-links" aria-label="Mobile">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="book.html">Book</a>
+      </nav>
+    </div>
+    <main>
+      <div class="page-title section">
+        <p class="eyebrow">In person</p>
+        <h1>Book an appointment</h1>
+        <p class="lede">
+          Appointment address will be sent in your confirmation email.
+        </p>
+      </div>
+      <section class="section book-layout">
+        <div class="book-calendly">
+          <div id="book-deposit-gate" class="book-deposit-gate">
+            <h2>Pay booking deposit</h2>
+            <p>
+              A <strong><span data-price-gbp="10">£10</span> deposit</strong> secures your slot and is
+              deducted from the final price.
+            </p>
+            <button class="btn btn-primary" id="book-deposit-pay" type="button">
+              Pay <span data-price-gbp="10">£10</span> deposit with Stripe
+            </button>
+            <p class="book-deposit-note">You'll pick your date and time after payment.</p>
+          </div>
+          <div id="book-deposit-confirmed" class="book-deposit-confirmed" hidden>
+            <p>Deposit paid — choose your appointment time below.</p>
+          </div>
+          <div id="book-calendly-embed" class="book-calendly-frame" hidden></div>
+          <div id="book-calendly-fallback" class="book-calendly-fallback" hidden>
+            <p>Having trouble loading the calendar?</p>
+            <a href="mailto:krownfrontz@gmail.com">Email krownfrontz@gmail.com</a> and we'll help you book.
+          </div>
+        </div>
+        <aside class="book-design" id="book-design-panel" aria-label="Your design"></aside>
+      </section>
+    </main>
+    <footer class="footer">
+      <div>
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="" width="220" height="64" />
+        <p>Manchester, UK</p>
+        <p class="footer-slogan">Your Krown, His Glory</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All styles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="shipping.html">Shipping policy</a>
+        <a href="refund-policy.html">Refund policy</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-of-service.html">Terms of service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:krownfrontz@gmail.com">krownfrontz@gmail.com</a>
+        <a href="https://instagram.com/krownfrontz" rel="noopener noreferrer">@krownfrontz</a>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

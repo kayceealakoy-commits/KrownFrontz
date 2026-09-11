@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.git/
+.netlify/
+scripts/
+chat-history/
+*.md
+!DEPLOY.md
+!HOSTINGER-DNS.md
+!STRIPE-LIVE.md

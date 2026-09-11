@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krown Frontz — Custom grillz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="home">
+    <header class="nav">
+      <p class="nav-slogan">Your Krown, His Glory</p>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+      </nav>
+      <a class="cart-link" href="checkout.html">Cart (0)</a>
+    </header>
+    <div class="nav-drawer" id="nav-drawer" hidden>
+      <nav class="nav-drawer-links" aria-label="Mobile">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="book.html">Book</a>
+      </nav>
+    </div>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div>
+          <p class="eyebrow">Custom fitted grillz</p>
+          <h1 id="hero-heading">Ready to upgrade your smile?</h1>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="how-it-works.html">How it works</a>
+            <a class="btn btn-secondary" href="shop.html">Shop styles</a>
+          </div>
+        </div>
+        <div class="hero-brand">
+          <div class="hero-logo-wrap">
+            <img class="hero-logo" src="assets/krown-frontz-logo.png" alt="Krown Frontz" width="680" height="340" />
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-ticker" aria-label="Why Krown Frontz">
+        <div class="trust-ticker-track">
+          <div class="trust-ticker-row">
+            <span class="trust-ticker-price">Caps from <span data-price-gbp="55">£55</span></span>
+            <span>Postal &amp; in person impressions</span>
+            <span>Worldwide shipping</span>
+            <span>Fully custom pieces available!</span>
+            <span class="trust-ticker-price">Caps from <span data-price-gbp="55">£55</span></span>
+            <span>Postal &amp; in person impressions</span>
+            <span>Worldwide shipping</span>
+            <span>Fully custom pieces available!</span>
+          </div>
+          <div class="trust-ticker-row" aria-hidden="true">
+            <span class="trust-ticker-price">Caps from <span data-price-gbp="55">£55</span></span>
+            <span>Postal &amp; in person impressions</span>
+            <span>Worldwide shipping</span>
+            <span>Fully custom pieces available!</span>
+            <span class="trust-ticker-price">Caps from <span data-price-gbp="55">£55</span></span>
+            <span>Postal &amp; in person impressions</span>
+            <span>Worldwide shipping</span>
+            <span>Fully custom pieces available!</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-showcase" aria-label="Client looks and Krown Frontz Journey">
+        <section class="section client-catalogue client-catalogue--editorial" aria-labelledby="client-heading">
+          <div class="section-header reveal" data-reveal>
+            <div>
+              <p class="eyebrow">Worn by clients</p>
+              <h2 id="client-heading">Client cam</h2>
+            </div>
+            <a class="view-all" href="shop.html">Shop styles →</a>
+          </div>
+          <div
+            class="client-carousel"
+            id="client-carousel"
+            aria-roledescription="carousel"
+            aria-label="Client grillz looks"
+          >
+            <div class="client-stage">
+              <div class="client-track" id="client-track"></div>
+              <button type="button" class="client-nav client-prev" id="client-prev" aria-label="Previous look">‹</button>
+              <button type="button" class="client-nav client-next" id="client-next" aria-label="Next look">›</button>
+              <div class="client-progress" id="client-progress" aria-hidden="true">
+                <span class="client-progress-bar" id="client-progress-bar"></span>
+              </div>
+            </div>
+            <div class="client-controls">
+              <div class="client-dots" id="client-dots" role="tablist" aria-label="Choose a look"></div>
+            </div>
+          </div>
+        </section>
+
+        <a class="journey-panel" href="journey.html">
+          <div class="journey-panel-media">
+            <img src="assets/journey-craft.jpg" alt="" width="800" height="600" />
+          </div>
+          <div class="journey-panel-body">
+            <p class="eyebrow">Our story</p>
+            <h2>Krown Frontz Journey</h2>
+            <p>How the brand started, what the name means, and the story behind Your Krown, His Glory.</p>
+            <span class="view-all">Read the journey →</span>
+          </div>
+        </a>
+      </section>
+
+      <section class="bestsellers" aria-labelledby="bestsellers-heading">
+        <div class="bestsellers-header">
+          <div>
+            <p class="eyebrow">Shop favourites</p>
+            <h2 id="bestsellers-heading">Bestsellers</h2>
+          </div>
+          <a class="view-all" href="shop.html">Shop all →</a>
+        </div>
+        <div class="bestsellers-rail">
+          <button type="button" class="bestsellers-nav bestsellers-prev" id="bestsellers-prev" aria-label="Previous bestsellers">‹</button>
+          <div class="bestsellers-viewport" id="bestsellers-viewport">
+            <div class="bestsellers-track" id="bestsellers-track" tabindex="0" aria-label="Bestsellers products"></div>
+          </div>
+          <button type="button" class="bestsellers-nav bestsellers-next" id="bestsellers-next" aria-label="Next bestsellers">›</button>
+        </div>
+      </section>
+
+      <section class="email-signup" aria-labelledby="email-signup-heading">
+        <div class="email-signup-copy">
+          <p class="eyebrow">Stay in the loop</p>
+          <h3 id="email-signup-heading">Subscribe to our emails</h3>
+          <p class="email-signup-lede">To be the first to know about limited offers and new drops.</p>
+        </div>
+        <form class="email-signup-form" id="email-signup-form">
+          <label class="field email-signup-honeypot" aria-hidden="true">
+            Company
+            <input type="text" name="company" tabindex="-1" autocomplete="off" />
+          </label>
+          <label class="field email-signup-email">
+            Email
+            <input type="email" name="email" required placeholder="you@email.com" autocomplete="email" />
+          </label>
+          <label class="email-signup-consent">
+            <input type="checkbox" name="consent" required value="yes" />
+            <span>I agree to receive marketing emails from Krown Frontz. See our <a href="privacy-policy.html">privacy policy</a>.</span>
+          </label>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="" width="220" height="64" />
+        <p>Manchester, UK</p>
+        <p class="footer-slogan">Your Krown, His Glory</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All styles</a>
+        <a href="shop.html?style=bar">Bar</a>
+        <a href="shop.html?style=window">Window</a>
+        <a href="shop.html?style=heart">Heart</a>
+        <a href="shop.html?style=star">Star</a>
+        <a href="shop.html?style=vampire">Vampire</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="book.html">Book</a>
+        <a href="product.html?id=impression-kit-uk">Impression kit</a>
+        <a href="shipping.html">Shipping policy</a>
+        <a href="refund-policy.html">Refund policy</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-of-service.html">Terms of service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:krownfrontz@gmail.com">krownfrontz@gmail.com</a>
+        <a href="https://instagram.com/krownfrontz" rel="noopener noreferrer">@krownfrontz</a>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="main.js"></script>
+  </body>
+</html>

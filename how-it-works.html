@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How it works — Krown Frontz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="Krown Frontz" width="320" height="88" />
+        <span class="nav-slogan">Your Krown, His Glory</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-drawer"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+      </nav>
+      <a class="cart-link" href="checkout.html">Cart (0)</a>
+    </header>
+    <div class="nav-drawer" id="nav-drawer" hidden>
+      <nav class="nav-drawer-links" aria-label="Mobile">
+        <a href="shop.html">Shop</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+        <a href="book.html">Book</a>
+      </nav>
+    </div>
+    <main>
+      <div class="page-title section">
+        <p class="eyebrow">Fit</p>
+        <h1>Two ways to take an impression</h1>
+        <p class="lede">Choose postal if you are not local to Manchester. Choose in person appointment if you can come in</p>
+      </div>
+
+      <section class="section hiw-overview reveal" data-reveal aria-label="Process at a glance">
+        <ol class="hiw-steps">
+          <li class="hiw-step">
+            <span class="hiw-step-num" aria-hidden="true">01</span>
+            <h3>Pick a style</h3>
+            <p>Choose from the shop — windows, hearts, and more.</p>
+          </li>
+          <li class="hiw-step">
+            <span class="hiw-step-num" aria-hidden="true">02</span>
+            <h3>Get fitted</h3>
+            <p>Postal kit to your door, or book a Manchester studio slot.</p>
+          </li>
+          <li class="hiw-step">
+            <span class="hiw-step-num" aria-hidden="true">03</span>
+            <h3>We craft</h3>
+            <p>Handmade in gold, silver, or iced finishes from your impression.</p>
+          </li>
+          <li class="hiw-step">
+            <span class="hiw-step-num" aria-hidden="true">04</span>
+            <h3>Wear it</h3>
+            <p>Collect in person or we post the finished piece to you.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section split">
+        <article class="path-card path-card--postal reveal" data-reveal>
+          <p class="eyebrow">Postal</p>
+          <h2>Impression kit</h2>
+          <ol class="path-steps">
+            <li>
+              <span class="path-step-num" aria-hidden="true">1</span>
+              <span class="path-step-body">Pick a style and check out.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">2</span>
+              <span class="path-step-body">We post the impression kit to you.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">3</span>
+              <span class="path-step-body">Follow the <a data-impression-instructions href="#">instructions</a> and take the impressions at home.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">4</span>
+              <span class="path-step-body">Post the kit back to us.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">5</span>
+              <span class="path-step-body">We make your grillz and ship the finished piece.</span>
+            </li>
+          </ol>
+          <a class="btn btn-primary" href="product.html?id=impression-kit-uk">Order impression kit</a>
+        </article>
+        <article class="path-card path-card--studio reveal" data-reveal>
+          <div class="path-card-accent">
+            <p class="eyebrow">In person</p>
+            <h2>Appointment</h2>
+          </div>
+          <ol class="path-steps">
+            <li>
+              <span class="path-step-num" aria-hidden="true">1</span>
+              <span class="path-step-body">Pick a style.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">2</span>
+              <span class="path-step-body">Book a 20-minute impression slot.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">3</span>
+              <span class="path-step-body">Pay a <span data-price-gbp="10">£10</span> booking deposit to secure your slot — deducted from the final price.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">4</span>
+              <span class="path-step-body">We take your impression in person.</span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">5</span>
+              <span class="path-step-body">Pay the balance in full after your appointment. <strong>Production cannot begin unless full payment has been made.</strong></span>
+            </li>
+            <li>
+              <span class="path-step-num" aria-hidden="true">6</span>
+              <span class="path-step-body">Collect in Manchester or we post when your piece is ready.</span>
+            </li>
+          </ol>
+          <a class="btn btn-secondary" href="book.html">Book an appointment</a>
+        </article>
+      </section>
+      <section class="section faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Questions</h2>
+        <details>
+          <summary>Do I need an appointment if I order by post?</summary>
+          <p>No. The kit is the appointment. You only book if you want the impression taken in person.</p>
+        </details>
+        <details>
+          <summary>How much does the impression kit cost?</summary>
+          <p>
+            UK customers pay <strong><span data-price-gbp="20">£20</span> all-in</strong> (materials, outbound delivery, and a prepaid UK return form). International
+            customers pay <strong><span data-price-gbp="10">£10</span></strong> for kit materials plus regional outbound kit shipping — see our
+            <a href="shipping.html">shipping policy</a>. Return postage is not prepaid — international clients find their own way to return the kit to us, using the return address found on the postage. Finished grillz shipping is charged at checkout for everyone.
+          </p>
+        </details>
+        <details>
+          <summary>When do I pay in full for a studio appointment?</summary>
+          <p>
+            You pay a <strong data-price-gbp="10">£10 deposit</strong> when you book. After your impression is taken in studio, the
+            <strong>remaining balance is due in full</strong> before we begin making your grillz.
+          </p>
+        </details>
+        <details>
+          <summary>Where is the studio?</summary>
+          <p>Manchester, UK. The exact address is sent in your booking confirmation email.</p>
+        </details>
+        <details>
+          <summary>What if I mess up the impressions at home?</summary>
+          <p>We will send you a new kit at an additional cost.</p>
+        </details>
+        <details>
+          <summary>How long does a piece take?</summary>
+          <p>Around 2–4 weeks after we have a good impression.</p>
+        </details>
+      </section>
+    </main>
+    <footer class="footer">
+      <div>
+        <img class="logo-img" src="assets/krown-frontz-logo.png" alt="" width="220" height="64" />
+        <p>Manchester, UK</p>
+        <p class="footer-slogan">Your Krown, His Glory</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All styles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="book.html">Book</a>
+        <a href="shipping.html">Shipping policy</a>
+        <a href="refund-policy.html">Refund policy</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-of-service.html">Terms of service</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:krownfrontz@gmail.com">krownfrontz@gmail.com</a>
+        <a href="https://instagram.com/krownfrontz" rel="noopener noreferrer">@krownfrontz</a>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
