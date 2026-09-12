@@ -131,7 +131,6 @@ PRODUCT_SPECS: dict[str, dict[str, Any]] = {
     "heart-lateral": _spec(["UL2"], "heart", cutout_teeth=["UL2"]),
     "star-canine": _spec(["UL3"], "star", cutout_teeth=["UL3"]),
     "star-lateral": _spec(["UL2"], "star", cutout_teeth=["UL2"]),
-    "star-abstract-2": _spec(["UL1", "UL2"], "star", cutout_teeth=["UL1", "UL2"]),
     "vampire-canines": _spec(["UR3", "UL3"], "vampire", vampire=True),
     "vampire-canine-lateral-2": _spec(
         ["UL3", "UL2"],

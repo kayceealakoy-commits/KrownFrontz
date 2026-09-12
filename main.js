@@ -815,7 +815,7 @@ const IMPRESSION_KITS = [
     displayName: "Impression Kit (UK)",
     price: 20,
     region: "uk",
-    image: null,
+    image: "assets/products/impression-kit-uk.webp?v=1",
     blurb:
       "Take your impressions at home. Includes materials for 2 attempts and a prepaid UK return form.",
     includes: [...KIT_SHARED_INCLUDES, "Return postage form (UK only)"],
@@ -827,7 +827,7 @@ const IMPRESSION_KITS = [
     region: "international",
     displayName: "Impression Kit (International)",
     price: 10,
-    image: null,
+    image: "assets/products/impression-kit-international.webp?v=1",
     blurb:
       "Take your impressions at home. Includes materials for 2 attempts. International clients find their own way to return the kit to us, using the return address found on the postage.",
     includes: [...KIT_SHARED_INCLUDES],
@@ -843,18 +843,18 @@ const ACCESSORIES = [
     displayName: "Krown Frontz Gift Card",
     price: 50,
     amounts: [50, 100, 150, 200, 250, 300, 350, 400],
-    image: "assets/products/gift-card.jpg?v=giftzoom5",
+    image: "assets/products/gift-card.png?v=giftcard11",
     imageAlt: "Krown Frontz gift card",
     blurb:
-      "Hard to gift a specific style? A Krown Frontz gift card lets them choose their own custom grillz and accessories. After payment we’ll email you a code to pass on — they can use it toward a postal order, or as a deposit on an in-person appointment. Any remaining balance is settled when they come in.",
+      "Hard to gift a specific style? A Krown Frontz gift card lets them choose their own custom grillz and accessories. After payment we’ll email you a code to pass on and they can use it toward a postal order, or as a deposit on an in-person appointment. Any remaining balance is settled when they come in.",
   },
   {
     id: "polish-cloth",
     kind: "accessory",
     displayName: "Jewellery polishing cloth",
     price: 3,
-    image: null,
-    imageAlt: "Jewellery polishing cloth",
+    image: "assets/products/polish-cloth.webp?v=1",
+    imageAlt: "Black jewellery polishing cloth",
     blurb:
       "Soft jewellery cloth for keeping your grillz bright between wears. Wipe gently after use to clear fingerprints and surface dullness — keep one with your set so a quick polish is always to hand. Best paired with a grillz case.",
   },
@@ -863,7 +863,7 @@ const ACCESSORIES = [
     kind: "accessory",
     displayName: "Grillz case",
     price: 5,
-    image: null,
+    image: "assets/products/grillz-case.webp?v=2",
     imageAlt: "Protective grillz case",
     blurb:
       "A compact protective case so you never lose your set. Shields your grillz from scratches and knocks at home or on the go — drop them in when you’re not wearing them, and keep your polishing cloth alongside.",
@@ -873,8 +873,8 @@ const ACCESSORIES = [
     kind: "service",
     displayName: "Grillz repolishing",
     price: 15,
-    image: null,
-    imageAlt: "Grillz repolishing service",
+    image: "assets/products/repolish-service.webp?v=3",
+    imageAlt: "Krown Frontz grillz packaged for repolishing",
     blurb:
       "Send your set back for a professional polish. Post them to us (we email the studio return address after payment) or drop off in Manchester and pick them up when ready.",
   },
@@ -1260,7 +1260,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "2",
     toothRule: "arch-canines",
-    blurb: "Symmetric pair on upper or lower.",
+    blurb: "Symmetric pair on upper or lower canines.",
   },
   {
     id: "lateral-lateral",
@@ -1273,7 +1273,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "2",
     toothRule: "arch-laterals",
-    blurb: "Both laterals on upper or lower. Clean double cap.",
+    blurb: "Both laterals on upper or lower teeth. Clean double cap.",
   },
   {
     id: "canine-lateral-2x",
@@ -1326,7 +1326,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "4",
     toothRule: "contiguous-front",
-    blurb: "Four contiguous front teeth. Choose upper or lower on the product page.",
+    blurb: "Four contiguous front teeth. Choose upper or lower teeth on the model below.",
   },
   {
     id: "canines-4",
@@ -1378,7 +1378,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "6",
     toothRule: "contiguous-front",
-    blurb: "Six contiguous front teeth. Choose upper or lower on the product page.",
+    blurb: "Six contiguous front teeth. Choose upper or lower teeth on the model below.",
   },
   {
     id: "plain-8",
@@ -1391,7 +1391,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "8",
     toothRule: "contiguous-front",
-    blurb: "Full front eight. Choose upper or lower on the product page.",
+    blurb: "Full front eight. Choose upper or lower teeth on the model below.",
   },
   {
     id: "top-4-bottom-4",
@@ -1655,21 +1655,6 @@ const PRODUCTS = [
     blurb: "Star cut-out on the lateral.",
   },
   {
-    id: "star-abstract-2",
-    displayName: "Abstract Star",
-    price: 245,
-    compareAt: 285,
-    pricingSterlingBase: 115,
-    image: "assets/products/star-abstract-2.webp?v=castzoom1",
-    imageAlt: "Abstract star grillz spanning two teeth on dental model",
-    finish: "gold",
-    style: "star",
-    teeth: "2",
-    toothRule: "contiguous-front",
-    chartMode: "upper",
-    blurb: "Abstract star design spanning two contiguous upper front teeth.",
-  },
-  {
     id: "vampire-canines",
     displayName: "Vampire Canines",
     price: 175,
@@ -1747,7 +1732,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-canines",
-    blurb: "Dust finish on both canines on upper or lower.",
+    blurb: "Dust finish on both canines on upper or lower teeth.",
   },
   {
     id: "dust-lateral-pair",
@@ -1760,7 +1745,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-laterals",
-    blurb: "Dust finish on both laterals on upper or lower.",
+    blurb: "Dust finish on both laterals on upper or lower teeth.",
   },
   {
     id: "dust-central-pair",
@@ -1773,7 +1758,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-centrals",
-    blurb: "Dust finish on both centrals on upper or lower.",
+    blurb: "Dust finish on both centrals on upper or lower teeth.",
   },
   {
     id: "dust-canines-4",
@@ -1890,7 +1875,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-canines",
-    blurb: "Hand-set stones on both canines on upper or lower.",
+    blurb: "Hand-set stones on both canines on upper or lower teeth.",
   },
   {
     id: "diamond-lateral-lateral",
@@ -1903,7 +1888,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-laterals",
-    blurb: "Hand-set stones on both laterals on upper or lower.",
+    blurb: "Hand-set stones on both laterals on upper or lower teeth.",
   },
   {
     id: "diamond-lateral-canine",
@@ -2476,13 +2461,23 @@ function initClientCatalogue() {
 }
 
 const BESTSELLER_IDS = [
+  "impression-kit-uk",
+  "repolish-service",
   "canine-canine",
   "canine-window",
   "canine-bar",
   "star-canine",
   "heart-canine",
-  "star-abstract-2",
 ];
+
+function bestsellerCard(item) {
+  if (!item) return "";
+  if (item.kind === "kit") return kitCard(item);
+  if (item.kind === "accessory" || item.kind === "service" || item.kind === "giftcard") {
+    return accessoryCard(item);
+  }
+  return productCard(item);
+}
 
 function initBestsellers() {
   const viewport = document.getElementById("bestsellers-viewport");
@@ -2492,15 +2487,19 @@ function initBestsellers() {
   if (!viewport || !track) return;
 
   const products = BESTSELLER_IDS.map((id) => {
+    const kit = findKit(id);
+    if (kit) return kit;
+    const accessory = findAccessory(id);
+    if (accessory) return accessory;
     const resolved = resolveProductId(id);
-    return PRODUCTS.find((p) => p.id === resolved);
+    return PRODUCTS.find((p) => p.id === resolved) || null;
   }).filter(Boolean);
 
   if (!products.length) return;
 
-  const cardsHtml = products.map(productCard).join("");
+  const cardsHtml = products.map(bestsellerCard).join("");
   const duplicateHtml = products
-    .map((p) => productCard(p).replace("<a ", '<a aria-hidden="true" tabindex="-1" '))
+    .map((p) => bestsellerCard(p).replace("<a ", '<a aria-hidden="true" tabindex="-1" '))
     .join("");
   track.innerHTML = cardsHtml + duplicateHtml;
 
@@ -2566,7 +2565,12 @@ function initBestsellers() {
 
   function scrollByCards(direction) {
     pause();
-    viewport.scrollBy({ left: direction * stepSize(), behavior: "smooth" });
+    const delta = direction * stepSize();
+    try {
+      viewport.scrollBy({ left: delta, behavior: "smooth" });
+    } catch (_) {
+      viewport.scrollLeft += delta;
+    }
     setTimeout(normalizeLoop, 400);
     scheduleResume();
   }
@@ -3166,8 +3170,13 @@ function fillServiceProduct(service) {
   if (price) price.textContent = formatMoney(service.price);
   if (blurb) blurb.textContent = service.blurb;
   if (gallery) {
-    gallery.className = "gallery product-image gold";
-    gallery.textContent = "Repolish";
+    if (service.image) {
+      gallery.className = "gallery product-gallery--image product-gallery--service";
+      gallery.innerHTML = `<img src="${service.image}" alt="${service.imageAlt || service.displayName}" />`;
+    } else {
+      gallery.className = "gallery product-image gold";
+      gallery.textContent = "Repolish";
+    }
   }
   initServiceAddToCart(service);
 }
@@ -3363,7 +3372,9 @@ function accessoryCard(item) {
   const cardClass =
     item.kind === "giftcard"
       ? "product-card product-card--named product-card--giftcard"
-      : "product-card product-card--named";
+      : item.kind === "service"
+        ? "product-card product-card--named product-card--service"
+        : "product-card product-card--named";
   return `<a class="${cardClass}" href="product.html?id=${item.id}${bookingQuery}" aria-label="${item.displayName}">
     <div class="product-card-media">${productMediaHtml(item, { placeholderLabel: label })}</div>
     <div class="product-card-footer">

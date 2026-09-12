@@ -131,18 +131,18 @@ const ToothPicker = (function () {
     const rule = getToothRule(product);
     const n = requiredCount(product);
     const mode = getChartMode(product);
-    if (rule === "single-canine") return "Select 1 canine — upper or lower, left or right.";
-    if (rule === "single-lateral") return "Select 1 lateral — upper or lower, left or right.";
-    if (rule === "single-central") return "Select 1 central — upper or lower, left or right.";
-    if (rule === "arch-canines") return "Select both canines on upper or lower (click either canine).";
-    if (rule === "arch-laterals") return "Select both laterals on upper or lower (click either lateral).";
-    if (rule === "arch-centrals") return "Select both centrals on upper or lower (click either central).";
+    if (rule === "single-canine") return "Select 1 canine — upper or lower canine, left or right.";
+    if (rule === "single-lateral") return "Select 1 lateral — upper or lower lateral, left or right.";
+    if (rule === "single-central") return "Select 1 central — upper or lower central, left or right.";
+    if (rule === "arch-canines") return "Select both canines on upper or lower teeth (click either canine).";
+    if (rule === "arch-laterals") return "Select both laterals on upper or lower teeth (click either lateral).";
+    if (rule === "arch-centrals") return "Select both centrals on upper or lower teeth (click either central).";
     if (rule === "both-arch-canines") return "Select all four canines (click any canine).";
     if (rule === "both-arch-laterals") return "Select all four laterals (click any lateral).";
     if (rule === "both-arch-centrals") return "Select all four centrals (click any central).";
     if (rule === "canine-lateral-pair") return "Select a canine and its adjacent lateral on the same side.";
     if (rule === "both-side-canine-lateral") {
-      return "Select canine and lateral on two sides — any upper/lower combination.";
+      return "Select canine and lateral on two sides — any upper/lower teeth combination.";
     }
     if (rule === "lateral-canine-cross") {
       return "Select a lateral and a canine — same side or opposite sides.";
@@ -161,7 +161,7 @@ const ToothPicker = (function () {
     if (rule === "contiguous-front" && mode === "upper") {
       return `Select ${n} contiguous front teeth on the upper.`;
     }
-    return `Select ${n} contiguous front teeth on upper or lower.`;
+    return `Select ${n} contiguous front teeth on upper or lower teeth.`;
   }
 
   function needsArchSelector() {
@@ -395,15 +395,15 @@ const ToothPicker = (function () {
     }
     if (rule === "arch-canines") {
       if (isArchCanines(allowed)) return { ok: true };
-      return { ok: false, message: "Select both canines on upper or lower." };
+      return { ok: false, message: "Select both canines on upper or lower teeth." };
     }
     if (rule === "arch-laterals") {
       if (isArchLaterals(allowed)) return { ok: true };
-      return { ok: false, message: "Select both laterals on upper or lower." };
+      return { ok: false, message: "Select both laterals on upper or lower teeth." };
     }
     if (rule === "arch-centrals") {
       if (isArchCentrals(allowed)) return { ok: true };
-      return { ok: false, message: "Select both centrals on upper or lower." };
+      return { ok: false, message: "Select both centrals on upper or lower teeth." };
     }
     if (rule === "both-arch-canines") {
       if (isBothArchCanines(allowed)) return { ok: true };
