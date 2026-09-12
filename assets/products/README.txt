@@ -60,11 +60,23 @@ imageAlt in main.js is left unchanged.
 Optional Blender pipeline
 -------------------------
 
-If Blender is installed with a base dental-arch scene:
+Product stills use the Artec "Plaster cast of teeth" mesh (CC BY).
+See assets/blender/source/ATTRIBUTION.md for credit requirements.
 
-     blender --background your-base.blend --python scripts/blender_render_previews.py
+Download the cast (if missing), build the dental base, then batch-render:
 
-Then run sync-images.
+     python scripts/download_artec_cast.py
+     BLENDER=/path/to/blender
+     $BLENDER --background --python scripts/blender_build_dental_base.py
+     $BLENDER --background assets/blender/dental_arch_base.blend \
+       --python scripts/blender_render_previews.py -- --all
+
+Single product:
+
+     $BLENDER --background assets/blender/dental_arch_base.blend \
+       --python scripts/blender_render_previews.py -- --id canine
+
+Then run sync-images (also updates main.js image fields).
 
 
 

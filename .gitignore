@@ -3,3 +3,13 @@ node_modules/
 
 # Local Netlify folder
 .netlify
+
+# Large Artec scan source (re-download via scripts/download_artec_cast.py)
+assets/blender/source/*.obj
+assets/blender/source/*.zip
+assets/blender/source/*.stl
+assets/blender/source/*.ply
+assets/blender/source/full_arch_cast.obj/
+assets/blender/source/*.webp
+assets/blender/source/*.blend
+assets/blender/source/*.blend1

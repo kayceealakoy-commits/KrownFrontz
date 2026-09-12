@@ -843,7 +843,7 @@ const ACCESSORIES = [
     displayName: "Krown Frontz Gift Card",
     price: 50,
     amounts: [50, 100, 150, 200, 250, 300, 350, 400],
-    image: "assets/products/gift-card.jpg",
+    image: "assets/products/gift-card.jpg?v=giftzoom5",
     imageAlt: "Krown Frontz gift card",
     blurb:
       "Hard to gift a specific style? A Krown Frontz gift card lets them choose their own custom grillz and accessories. After payment we’ll email you a code to pass on — they can use it toward a postal order, or as a deposit on an in-person appointment. Any remaining balance is settled when they come in.",
@@ -1215,7 +1215,7 @@ const PRODUCTS = [
     displayName: "Canine",
     price: 90,
     compareAt: 115,
-    image: null,
+    image: "assets/products/canine.webp?v=castzoom1",
     imageAlt: "Canine grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1228,7 +1228,7 @@ const PRODUCTS = [
     displayName: "Lateral",
     price: 95,
     compareAt: 115,
-    image: null,
+    image: "assets/products/lateral.webp?v=castzoom1",
     imageAlt: "Lateral grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1241,7 +1241,7 @@ const PRODUCTS = [
     displayName: "Central",
     price: 95,
     compareAt: 115,
-    image: null,
+    image: "assets/products/central.webp?v=castzoom1",
     imageAlt: "Central incisor grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1254,7 +1254,7 @@ const PRODUCTS = [
     displayName: "2 x canines",
     price: 110,
     compareAt: 150,
-    image: null,
+    image: "assets/products/canine-canine.webp?v=castzoom1",
     imageAlt: "Canine pair grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1267,7 +1267,7 @@ const PRODUCTS = [
     displayName: "2 x Lateral",
     price: 110,
     compareAt: 140,
-    image: null,
+    image: "assets/products/lateral-lateral.webp?v=castzoom1",
     imageAlt: "Lateral pair grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1280,7 +1280,7 @@ const PRODUCTS = [
     displayName: "2 x Canine & Lateral",
     price: 175,
     compareAt: 225,
-    image: null,
+    image: "assets/products/canine-lateral-2x.webp?v=castzoom1",
     imageAlt: "2 x canine and lateral grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1293,7 +1293,7 @@ const PRODUCTS = [
     displayName: "Lateral & Canine",
     price: 110,
     compareAt: 140,
-    image: null,
+    image: "assets/products/lateral-canine.webp?v=castzoom1",
     imageAlt: "Lateral and canine grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1307,7 +1307,7 @@ const PRODUCTS = [
     price: 110,
     compareAt: 135,
     pricingPremiumPerTooth: 5,
-    image: null,
+    image: "assets/products/canine-window.webp?v=castzoom1",
     imageAlt: "Canine and window grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1320,7 +1320,7 @@ const PRODUCTS = [
     displayName: "4 set",
     price: 350,
     compareAt: 410,
-    image: null,
+    image: "assets/products/plain-4.webp?v=castzoom1",
     imageAlt: "4 set grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1333,7 +1333,7 @@ const PRODUCTS = [
     displayName: "4 x Canine",
     price: 220,
     compareAt: 280,
-    image: null,
+    image: "assets/products/canines-4.webp?v=castzoom1",
     imageAlt: "4 canine grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1346,7 +1346,7 @@ const PRODUCTS = [
     displayName: "4 x Lateral",
     price: 220,
     compareAt: 280,
-    image: null,
+    image: "assets/products/laterals-4.webp?v=castzoom1",
     imageAlt: "4 lateral grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1359,7 +1359,7 @@ const PRODUCTS = [
     displayName: "4 x Central",
     price: 220,
     compareAt: 280,
-    image: null,
+    image: "assets/products/centrals-4.webp?v=castzoom1",
     imageAlt: "4 central grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1372,7 +1372,7 @@ const PRODUCTS = [
     displayName: "6 set",
     price: 450,
     compareAt: 520,
-    image: null,
+    image: "assets/products/plain-6.webp?v=castzoom1",
     imageAlt: "6 set grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1385,7 +1385,7 @@ const PRODUCTS = [
     displayName: "8 set",
     price: 580,
     compareAt: 650,
-    image: null,
+    image: "assets/products/plain-8.webp?v=castzoom1",
     imageAlt: "8 set grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1398,7 +1398,7 @@ const PRODUCTS = [
     displayName: "4 on 4",
     price: 680,
     compareAt: 780,
-    image: null,
+    image: "assets/products/top-4-bottom-4.webp?v=castzoom1",
     imageAlt: "Top 4 bottom 4 plain grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1412,7 +1412,7 @@ const PRODUCTS = [
     displayName: "6 on 6",
     price: 900,
     compareAt: 1050,
-    image: null,
+    image: "assets/products/top-6-bottom-6.webp?v=castzoom1",
     imageAlt: "Top 6 bottom 6 plain grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1426,7 +1426,7 @@ const PRODUCTS = [
     displayName: "8 on 8",
     price: 1200,
     compareAt: 1350,
-    image: null,
+    image: "assets/products/top-8-bottom-8.webp?v=castzoom1",
     imageAlt: "Top 8 bottom 8 plain grillz on dental model",
     finish: "gold",
     style: "basics",
@@ -1440,7 +1440,7 @@ const PRODUCTS = [
     displayName: "Window Canine & Inlay",
     price: 115,
     compareAt: 135,
-    image: null,
+    image: "assets/products/window-canine-bar.webp?v=castzoom1",
     imageAlt: "Window canine and inlay grillz on dental model",
     finish: "gold",
     style: "bar",
@@ -1454,7 +1454,7 @@ const PRODUCTS = [
     price: 110,
     compareAt: 135,
     pricingPremiumPerTooth: 5,
-    image: null,
+    image: "assets/products/canine-bar.webp?v=castzoom1",
     imageAlt: "Canine and inlay grillz on dental model",
     finish: "gold",
     style: "bar",
@@ -1468,7 +1468,7 @@ const PRODUCTS = [
     price: 295,
     compareAt: 335,
     pricingPremiumPerTooth: 20,
-    image: null,
+    image: "assets/products/heart-canine-bar.webp?v=castzoom1",
     imageAlt: "Heart canine and inlay grillz on dental model",
     finish: "gold",
     style: "bar",
@@ -1484,7 +1484,7 @@ const PRODUCTS = [
     pricingSterlingBase: 225,
     pricingPremiumBase: 235,
     pricingPremiumPerTooth: 0,
-    image: null,
+    image: "assets/products/canines-bar-2x.webp?v=castzoom1",
     imageAlt: "Lower canine and inlay grillz on dental model",
     finish: "gold",
     style: "bar",
@@ -1498,7 +1498,7 @@ const PRODUCTS = [
     displayName: "Window Canine",
     price: 105,
     compareAt: 125,
-    image: null,
+    image: "assets/products/window-canine.webp?v=castzoom1",
     imageAlt: "Window canine grillz on dental model",
     finish: "gold",
     style: "window",
@@ -1511,7 +1511,7 @@ const PRODUCTS = [
     displayName: "Window Lateral",
     price: 105,
     compareAt: 125,
-    image: null,
+    image: "assets/products/window-lateral.webp?v=castzoom1",
     imageAlt: "Window lateral grillz on dental model",
     finish: "gold",
     style: "window",
@@ -1524,7 +1524,7 @@ const PRODUCTS = [
     displayName: "Window Canine & Window Lateral",
     price: 245,
     compareAt: 285,
-    image: null,
+    image: "assets/products/window-canine-lateral-2.webp?v=castzoom1",
     imageAlt: "Window canine and window lateral grillz on dental model",
     finish: "gold",
     style: "window",
@@ -1537,7 +1537,7 @@ const PRODUCTS = [
     displayName: "4 set open face",
     price: 240,
     compareAt: 280,
-    image: null,
+    image: "assets/products/open-face-4.webp?v=castzoom1",
     imageAlt: "4 set open face grillz on dental model",
     finish: "gold",
     style: "window",
@@ -1550,7 +1550,7 @@ const PRODUCTS = [
     displayName: "6 set open face",
     price: 280,
     compareAt: 320,
-    image: null,
+    image: "assets/products/open-face-6.webp?v=castzoom1",
     imageAlt: "6 set open face grillz on dental model",
     finish: "silver",
     style: "window",
@@ -1564,7 +1564,7 @@ const PRODUCTS = [
     price: 580,
     compareAt: 640,
     pricingSterlingBase: 305,
-    image: null,
+    image: "assets/products/window-set-8.webp?v=castzoom1",
     imageAlt: "8 set open face grillz on dental model",
     finish: "silver",
     style: "window",
@@ -1578,7 +1578,7 @@ const PRODUCTS = [
     price: 560,
     compareAt: 640,
     pricingSterlingBase: 460,
-    image: null,
+    image: "assets/products/open-face-6-on-6.webp?v=castzoom1",
     imageAlt: "6 on 6 open face grillz on dental model",
     finish: "silver",
     style: "window",
@@ -1593,7 +1593,7 @@ const PRODUCTS = [
     price: 1160,
     compareAt: 1280,
     pricingPremiumPerTooth: 5,
-    image: null,
+    image: "assets/products/open-face-8-on-8.webp?v=castzoom1",
     imageAlt: "8 on 8 open face grillz on dental model",
     finish: "silver",
     style: "window",
@@ -1607,7 +1607,7 @@ const PRODUCTS = [
     displayName: "Heart Canine",
     price: 165,
     compareAt: 195,
-    image: null,
+    image: "assets/products/heart-canine.webp?v=castzoom1",
     imageAlt: "Heart window canine grillz on dental model",
     finish: "gold",
     style: "heart",
@@ -1620,7 +1620,7 @@ const PRODUCTS = [
     displayName: "Heart Lateral",
     price: 165,
     compareAt: 195,
-    image: null,
+    image: "assets/products/heart-lateral.webp?v=castzoom1",
     imageAlt: "Heart window lateral grillz on dental model",
     finish: "gold",
     style: "heart",
@@ -1633,7 +1633,7 @@ const PRODUCTS = [
     displayName: "Star Canine",
     price: 165,
     compareAt: 195,
-    image: null,
+    image: "assets/products/star-canine.webp?v=castzoom1",
     imageAlt: "Star cut-out canine grillz on dental model",
     finish: "gold",
     style: "star",
@@ -1646,7 +1646,7 @@ const PRODUCTS = [
     displayName: "Star Lateral",
     price: 165,
     compareAt: 195,
-    image: null,
+    image: "assets/products/star-lateral.webp?v=castzoom1",
     imageAlt: "Star cut-out lateral grillz on dental model",
     finish: "gold",
     style: "star",
@@ -1660,7 +1660,7 @@ const PRODUCTS = [
     price: 245,
     compareAt: 285,
     pricingSterlingBase: 115,
-    image: null,
+    image: "assets/products/star-abstract-2.webp?v=castzoom1",
     imageAlt: "Abstract star grillz spanning two teeth on dental model",
     finish: "gold",
     style: "star",
@@ -1675,7 +1675,7 @@ const PRODUCTS = [
     price: 175,
     compareAt: 210,
     pricingSterlingBase: 115,
-    image: null,
+    image: "assets/products/vampire-canines.webp?v=castzoom1",
     imageAlt: "Vampire canine grillz on dental model",
     finish: "gold",
     style: "vampire",
@@ -1689,7 +1689,7 @@ const PRODUCTS = [
     price: 245,
     compareAt: 285,
     pricingPremiumPerTooth: 5,
-    image: null,
+    image: "assets/products/vampire-canine-lateral-2.webp?v=castzoom1",
     imageAlt: "Vampire canine and lateral grillz on dental model",
     finish: "gold",
     style: "vampire",
@@ -1702,7 +1702,7 @@ const PRODUCTS = [
     displayName: "Diamond-dust Canine",
     price: 120,
     compareAt: 145,
-    image: null,
+    image: "assets/products/dust-canine.webp?v=castzoom1",
     imageAlt: "Diamond-dust canine grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1715,7 +1715,7 @@ const PRODUCTS = [
     displayName: "Diamond-dust Lateral",
     price: 125,
     compareAt: 145,
-    image: null,
+    image: "assets/products/dust-lateral.webp?v=castzoom1",
     imageAlt: "Diamond-dust lateral grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1728,7 +1728,7 @@ const PRODUCTS = [
     displayName: "Diamond-dust Central",
     price: 125,
     compareAt: 145,
-    image: null,
+    image: "assets/products/dust-central.webp?v=castzoom1",
     imageAlt: "Diamond-dust central grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1741,7 +1741,7 @@ const PRODUCTS = [
     displayName: "2 x Diamond-dust Canine",
     price: 150,
     compareAt: 190,
-    image: null,
+    image: "assets/products/dust-canine-pair.webp?v=castzoom1",
     imageAlt: "Diamond-dust canine pair grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1754,7 +1754,7 @@ const PRODUCTS = [
     displayName: "2 x Diamond-dust Lateral",
     price: 150,
     compareAt: 180,
-    image: null,
+    image: "assets/products/dust-lateral-pair.webp?v=castzoom1",
     imageAlt: "Diamond-dust lateral pair grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1767,7 +1767,7 @@ const PRODUCTS = [
     displayName: "2 x Diamond-dust Central",
     price: 150,
     compareAt: 180,
-    image: null,
+    image: "assets/products/dust-central-pair.webp?v=castzoom1",
     imageAlt: "Diamond-dust central pair grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1780,7 +1780,7 @@ const PRODUCTS = [
     displayName: "4 x Diamond-dust Canine",
     price: 280,
     compareAt: 340,
-    image: null,
+    image: "assets/products/dust-canines-4.webp?v=castzoom1",
     imageAlt: "Diamond-dust 4 canine grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1793,7 +1793,7 @@ const PRODUCTS = [
     displayName: "4 x Diamond-dust Lateral",
     price: 280,
     compareAt: 340,
-    image: null,
+    image: "assets/products/dust-laterals-4.webp?v=castzoom1",
     imageAlt: "Diamond-dust 4 lateral grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1806,7 +1806,7 @@ const PRODUCTS = [
     displayName: "4 x Diamond-dust Central",
     price: 280,
     compareAt: 340,
-    image: null,
+    image: "assets/products/dust-centrals-4.webp?v=castzoom1",
     imageAlt: "Diamond-dust 4 central grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1819,7 +1819,7 @@ const PRODUCTS = [
     displayName: "4 x Diamond-dust set",
     price: 320,
     compareAt: 380,
-    image: null,
+    image: "assets/products/diamond-dust-4.webp?v=castzoom1",
     imageAlt: "Diamond-dust 4-tooth grillz on dental model",
     finish: "gold",
     style: "diamond",
@@ -1832,7 +1832,7 @@ const PRODUCTS = [
     displayName: "Diamond Canine",
     price: 360,
     compareAt: 420,
-    image: null,
+    image: "assets/products/diamond-canine.webp?v=castzoom1",
     imageAlt: "Diamond canine grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1845,7 +1845,7 @@ const PRODUCTS = [
     displayName: "Diamond Lateral",
     price: 290,
     compareAt: 340,
-    image: null,
+    image: "assets/products/diamond-lateral.webp?v=castzoom1",
     imageAlt: "Diamond lateral grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1858,7 +1858,7 @@ const PRODUCTS = [
     displayName: "Diamond Heart Canine",
     price: 320,
     compareAt: 375,
-    image: null,
+    image: "assets/products/diamond-heart-canine.webp?v=castzoom1",
     imageAlt: "Diamond heart canine grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1871,7 +1871,7 @@ const PRODUCTS = [
     displayName: "Diamond Window Canine",
     price: 260,
     compareAt: 305,
-    image: null,
+    image: "assets/products/diamond-window-canine.webp?v=castzoom1",
     imageAlt: "Diamond window canine grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1884,7 +1884,7 @@ const PRODUCTS = [
     displayName: "2 x Diamond Canine",
     price: 630,
     compareAt: 720,
-    image: null,
+    image: "assets/products/diamond-canine-canine.webp?v=castzoom1",
     imageAlt: "Diamond canine pair grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1897,7 +1897,7 @@ const PRODUCTS = [
     displayName: "2 x Diamond Lateral",
     price: 490,
     compareAt: 560,
-    image: null,
+    image: "assets/products/diamond-lateral-lateral.webp?v=castzoom1",
     imageAlt: "Diamond lateral pair grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1910,7 +1910,7 @@ const PRODUCTS = [
     displayName: "Diamond Lateral & Canine",
     price: 560,
     compareAt: 640,
-    image: null,
+    image: "assets/products/diamond-lateral-canine.webp?v=castzoom1",
     imageAlt: "Diamond lateral and canine grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1923,7 +1923,7 @@ const PRODUCTS = [
     displayName: "Diamond Window Canine & Inlay",
     price: 275,
     compareAt: 320,
-    image: null,
+    image: "assets/products/diamond-window-canine-inlay.webp?v=castzoom1",
     imageAlt: "Diamond window canine and inlay grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1936,7 +1936,7 @@ const PRODUCTS = [
     displayName: "Diamond Window Lateral & Canine",
     price: 350,
     compareAt: 405,
-    image: null,
+    image: "assets/products/diamond-window-lateral-canine.webp?v=castzoom1",
     imageAlt: "Diamond window lateral and canine grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -1949,7 +1949,7 @@ const PRODUCTS = [
     displayName: "Window Canine & Diamond Inlay",
     price: 220,
     compareAt: 260,
-    image: null,
+    image: "assets/products/window-canine-diamond-inlay.webp?v=castzoom1",
     imageAlt: "Window canine and diamond inlay grillz on dental model",
     finish: "iced",
     style: "diamond",
@@ -2607,27 +2607,37 @@ function initBestsellers() {
   let dragScrollLeft = 0;
   let dragging = false;
   let dragMoved = false;
+  let activePointerId = null;
+  const dragThresholdPx = 10;
 
   viewport.addEventListener("pointerdown", (e) => {
     if (e.pointerType === "touch") return;
+    if (e.button != null && e.button !== 0) return;
     dragging = true;
     dragMoved = false;
-    viewport.classList.add("is-dragging");
+    activePointerId = e.pointerId;
     dragStartX = e.clientX;
     dragScrollLeft = viewport.scrollLeft;
-    viewport.setPointerCapture?.(e.pointerId);
   });
 
   viewport.addEventListener("pointermove", (e) => {
-    if (!dragging) return;
+    if (!dragging || e.pointerId !== activePointerId) return;
     const delta = e.clientX - dragStartX;
-    if (Math.abs(delta) > 4) dragMoved = true;
+    if (!dragMoved) {
+      if (Math.abs(delta) < dragThresholdPx) return;
+      dragMoved = true;
+      viewport.classList.add("is-dragging");
+      viewport.setPointerCapture?.(e.pointerId);
+    }
     viewport.scrollLeft = dragScrollLeft - delta;
   });
 
   function endDrag(e) {
     if (!dragging) return;
+    if (activePointerId != null && e.pointerId !== activePointerId) return;
+    const wasDrag = dragMoved;
     dragging = false;
+    activePointerId = null;
     viewport.classList.remove("is-dragging");
     try {
       viewport.releasePointerCapture?.(e.pointerId);
@@ -2636,6 +2646,12 @@ function initBestsellers() {
     }
     normalizeLoop();
     scheduleResume();
+    // Keep wasDrag until after the click event; clear on the next frame.
+    if (wasDrag) {
+      requestAnimationFrame(() => {
+        dragMoved = false;
+      });
+    }
   }
 
   viewport.addEventListener("pointerup", endDrag);
@@ -2646,7 +2662,6 @@ function initBestsellers() {
       if (!dragMoved) return;
       e.preventDefault();
       e.stopPropagation();
-      dragMoved = false;
     },
     true
   );

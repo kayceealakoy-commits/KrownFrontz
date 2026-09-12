@@ -10,7 +10,27 @@
       href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=bestseller-click1" />
+    <style id="no-product-gold-frame">
+      .product-card-media,
+      .product-gallery--image {
+        padding: 0 !important;
+      }
+      .product-card-media::before,
+      .product-card-media::after,
+      .product-gallery--image::before,
+      .product-gallery--image::after {
+        content: none !important;
+        display: none !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: none !important;
+      }
+      .gallery.product-gallery--image {
+        outline: none !important;
+      }
+    </style>
   </head>
   <body>
     <header class="nav">
@@ -122,6 +142,6 @@
     </footer>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
     <script src="tooth-picker.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js?v=bestseller-click1"></script>
   </body>
 </html>
