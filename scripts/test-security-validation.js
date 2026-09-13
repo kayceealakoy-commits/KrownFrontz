@@ -122,6 +122,16 @@ if (!noOrigin.allowed) {
   fail("missing origin should be allowed (same-origin GET)");
 }
 
+const localOrigin = checkOrigin({ headers: { origin: "http://localhost:8888" } });
+if (!localOrigin.allowed) {
+  fail("localhost origin should be allowed for local Stripe testing");
+}
+
+const loopbackOrigin = checkOrigin({ headers: { origin: "http://127.0.0.1:5500" } });
+if (!loopbackOrigin.allowed) {
+  fail("127.0.0.1 origin should be allowed for local Stripe testing");
+}
+
 // Booking deposit one-time redeem
 const unpaidDeposit = resolveDepositVerification(
   { payment_status: "unpaid", metadata: { type: "booking_deposit" } },

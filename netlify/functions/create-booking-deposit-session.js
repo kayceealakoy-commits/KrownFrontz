@@ -5,16 +5,12 @@ const {
   enforceRateLimit,
   checkOrigin,
   validateEmail,
-  getSiteUrl,
+  publicSiteUrl,
 } = require("../../lib/http-security");
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const BOOKING_DEPOSIT_PENCE = 1000;
-
-function json(statusCode, body) {
-  return corsJson(statusCode, body, "POST, OPTIONS");
-}
 
 function sanitizeReturnQuery(raw) {
   if (!raw || typeof raw !== "string") return "";
@@ -33,6 +29,8 @@ function depositIdempotencyKey(email, returnQuery) {
 }
 
 exports.handler = async (event) => {
+  const json = (statusCode, body) => corsJson(statusCode, body, "POST, OPTIONS", event);
+
   if (event.httpMethod === "OPTIONS") {
     return json(204, {});
   }
@@ -58,7 +56,7 @@ exports.handler = async (event) => {
   try {
     const payload = JSON.parse(event.body || "{}");
     const returnQuery = sanitizeReturnQuery(payload.returnQuery);
-    const siteUrl = getSiteUrl();
+    const siteUrl = publicSiteUrl(event);
     const metadata = { type: "booking_deposit" };
 
     const sessionParams = {

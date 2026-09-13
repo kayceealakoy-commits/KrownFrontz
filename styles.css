@@ -1692,6 +1692,54 @@ h1 {
   min-width: 0;
 }
 
+.book-calendly-preview {
+  position: relative;
+  isolation: isolate;
+}
+
+.book-calendly-lock {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.book-calendly-lock[hidden] {
+  display: none;
+}
+
+.book-calendly-lock-card {
+  max-width: 360px;
+  text-align: center;
+}
+
+.book-calendly-lock-label {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+}
+
+.book-calendly-lock-card .btn {
+  width: 100%;
+}
+
+.book-calendly-lock-card .btn + .btn {
+  margin-top: 12px;
+}
+
+.book-calendly-preview.is-confirm-blocked .book-calendly-frame,
+.book-calendly-preview.is-confirm-blocked .book-calendly-frame iframe {
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .book-deposit-gate,
 .book-deposit-confirmed {
   background: var(--color-surface);
@@ -2462,6 +2510,18 @@ a[data-impression-instructions]:focus-visible {
   margin: -4px 0 12px;
   font-size: 13px;
   color: var(--color-muted);
+}
+
+.kit-uk-alt-note {
+  margin: -4px 0 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+.kit-uk-alt-note a {
+  color: var(--color-gold);
+  font-weight: 600;
 }
 
 .cta-row {

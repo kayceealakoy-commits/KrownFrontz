@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=compat1" />
+    <link rel="stylesheet" href="styles.css?v=calprev5" />
     <style id="no-product-gold-frame">
       .product-card-media,
       .product-gallery--image {
@@ -52,6 +52,7 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="shop.html">Shop</a>
         <a href="how-it-works.html">How it works</a>
+        <a href="book.html" aria-current="page">Book</a>
       </nav>
       <a class="cart-link" href="checkout.html">Cart (0)</a>
     </header>
@@ -59,7 +60,7 @@
       <nav class="nav-drawer-links" aria-label="Mobile">
         <a href="shop.html">Shop</a>
         <a href="how-it-works.html">How it works</a>
-        <a href="book.html">Book</a>
+        <a href="book.html" aria-current="page">Book</a>
       </nav>
     </div>
     <main>
@@ -67,7 +68,8 @@
         <p class="eyebrow">In person</p>
         <h1>Book an appointment</h1>
         <p class="lede">
-          Appointment address will be sent in your confirmation email.
+          Browse days and times below, then pay a deposit to confirm a slot. Appointment
+          address will be sent in your confirmation email.
         </p>
       </div>
       <section class="section book-layout">
@@ -81,12 +83,27 @@
             <button class="btn btn-primary" id="book-deposit-pay" type="button">
               Pay <span data-price-gbp="10">£10</span> deposit with Stripe
             </button>
-            <p class="book-deposit-note">You'll pick your date and time after payment.</p>
+            <p class="book-deposit-note">
+              Browse days and times below. Pay £10 when you're ready to confirm a slot.
+            </p>
           </div>
           <div id="book-deposit-confirmed" class="book-deposit-confirmed" hidden>
             <p>Deposit paid — choose your appointment time below.</p>
           </div>
-          <div id="book-calendly-embed" class="book-calendly-frame" hidden></div>
+          <div class="book-calendly-preview" id="book-calendly-preview">
+            <div id="book-calendly-embed" class="book-calendly-frame"></div>
+            <div id="book-deposit-lock" class="book-calendly-lock" hidden>
+              <div class="book-calendly-lock-card">
+                <p class="book-calendly-lock-label">Pay the deposit to confirm this slot</p>
+                <button class="btn btn-primary" id="book-deposit-lock-pay" type="button">
+                  Pay <span data-price-gbp="10">£10</span> deposit with Stripe
+                </button>
+                <button class="btn btn-secondary" id="book-deposit-lock-back" type="button">
+                  Choose a different time
+                </button>
+              </div>
+            </div>
+          </div>
           <div id="book-calendly-fallback" class="book-calendly-fallback" hidden>
             <p>Having trouble loading the calendar?</p>
             <a href="mailto:krownfrontz@gmail.com">Email krownfrontz@gmail.com</a> and we'll help you book.
@@ -121,6 +138,6 @@
     </footer>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-    <script src="main.js?v=archteeth1"></script>
+    <script src="main.js?v=calprev5"></script>
   </body>
 </html>

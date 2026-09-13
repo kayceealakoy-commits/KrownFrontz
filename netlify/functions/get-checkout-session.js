@@ -12,11 +12,9 @@ const {
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-function json(statusCode, body) {
-  return corsJson(statusCode, body, "GET, OPTIONS");
-}
-
 exports.handler = async (event) => {
+  const json = (statusCode, body) => corsJson(statusCode, body, "GET, OPTIONS", event);
+
   if (event.httpMethod === "OPTIONS") {
     return json(204, {});
   }

@@ -13,10 +13,6 @@ const {
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-function json(statusCode, body) {
-  return corsJson(statusCode, body, "POST, OPTIONS");
-}
-
 function buildSessionMetadata(zoneId, customer, priced) {
   const fulfillmentJson = JSON.stringify(priced.fulfillment);
   const cartJson = JSON.stringify(priced.cart.items);
@@ -38,6 +34,8 @@ function checkoutIdempotencyKey(zoneId, customer, items) {
 }
 
 exports.handler = async (event) => {
+  const json = (statusCode, body) => corsJson(statusCode, body, "POST, OPTIONS", event);
+
   if (event.httpMethod === "OPTIONS") {
     return json(204, {});
   }

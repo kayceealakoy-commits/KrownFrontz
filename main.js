@@ -3081,6 +3081,8 @@ function setProductMode(mode) {
   document.querySelectorAll(".service-only").forEach((el) => {
     el.hidden = mode !== "service";
   });
+  const ukAltNote = document.getElementById("kit-uk-alt-note");
+  if (ukAltNote) ukAltNote.hidden = true;
 }
 
 function setGrillzProductUiVisible(visible) {
@@ -3130,6 +3132,8 @@ function fillKitProduct(kit) {
     }
   }
   renderKitContents(kit);
+  const ukAltNote = document.getElementById("kit-uk-alt-note");
+  if (ukAltNote) ukAltNote.hidden = kit.id !== "impression-kit-uk";
   initKitAddToCart(kit);
 }
 
@@ -4215,22 +4219,66 @@ function renderBookDesignPanel() {
 const BOOKING_DEPOSIT_GBP = 10;
 const BOOKING_DEPOSIT_SESSION_KEY = "kf-booking-deposit-session";
 
+let bookingDepositPaid = false;
+let bookCalendlyAwaitingPayment = false;
+
+function bookingDepositPayButtons() {
+  return [
+    document.getElementById("book-deposit-pay"),
+    document.getElementById("book-deposit-lock-pay"),
+  ].filter(Boolean);
+}
+
+function setBookCalendlyConfirmBlocked(blocked) {
+  if (bookingDepositPaid) {
+    blocked = false;
+    bookCalendlyAwaitingPayment = false;
+  } else if (bookCalendlyAwaitingPayment) {
+    blocked = true;
+  }
+  const preview = document.getElementById("book-calendly-preview");
+  const lock = document.getElementById("book-deposit-lock");
+  const embed = document.getElementById("book-calendly-embed");
+  if (preview) preview.classList.toggle("is-confirm-blocked", blocked);
+  if (lock) lock.hidden = !blocked;
+  if (embed) embed.inert = blocked;
+}
+
+function blockBookCalendlyUntilDeposit() {
+  if (bookingDepositPaid) return;
+  bookCalendlyAwaitingPayment = true;
+  setBookCalendlyConfirmBlocked(true);
+}
+
+function resumeBookCalendlyBrowsing() {
+  bookCalendlyAwaitingPayment = false;
+  setBookCalendlyConfirmBlocked(false);
+  const parent = document.getElementById("book-calendly-embed");
+  if (parent) {
+    parent.replaceChildren();
+    parent.style.height = "";
+  }
+  initBookCalendly();
+}
+
 function showBookDepositGate() {
+  bookingDepositPaid = false;
+  bookCalendlyAwaitingPayment = false;
   const gate = document.getElementById("book-deposit-gate");
   const confirmed = document.getElementById("book-deposit-confirmed");
-  const embed = document.getElementById("book-calendly-embed");
   if (gate) gate.hidden = false;
   if (confirmed) confirmed.hidden = true;
-  if (embed) embed.hidden = true;
+  setBookCalendlyConfirmBlocked(false);
 }
 
 function showBookDepositConfirmed() {
+  bookingDepositPaid = true;
+  bookCalendlyAwaitingPayment = false;
   const gate = document.getElementById("book-deposit-gate");
   const confirmed = document.getElementById("book-deposit-confirmed");
-  const embed = document.getElementById("book-calendly-embed");
   if (gate) gate.hidden = true;
   if (confirmed) confirmed.hidden = false;
-  if (embed) embed.hidden = false;
+  setBookCalendlyConfirmBlocked(false);
 }
 
 async function verifyBookingDepositSession(sessionId, { redeem = false } = {}) {
@@ -4264,15 +4312,85 @@ async function unlockBookCalendlyAfterDeposit(sessionId) {
   initBookCalendly();
 }
 
+function parseCalendlyEventName(event) {
+  let data = event.data;
+  if (typeof data === "string") {
+    try {
+      data = JSON.parse(data);
+    } catch {
+      return String(data || "");
+    }
+  }
+  if (!data || typeof data !== "object") return "";
+  const named = String(data.event || data.name || "");
+  if (named) return named;
+  try {
+    const blob = JSON.stringify(data);
+    if (blob.includes("date_and_time_selected")) return "calendly.date_and_time_selected";
+    if (blob.includes("event_scheduled")) return "calendly.event_scheduled";
+  } catch {
+    return "";
+  }
+  return "";
+}
+
+function iframeSignalsDetailsForm(iframe) {
+  const title = (iframe?.getAttribute("title") || "").toLowerCase();
+  return /enter details|invitee|confirm your/.test(title);
+}
+
+function watchBookCalendlyDetailsStep() {
+  if (watchBookCalendlyDetailsStep.bound) return;
+  watchBookCalendlyDetailsStep.bound = true;
+  window.setInterval(() => {
+    if (bookingDepositPaid || bookCalendlyAwaitingPayment) return;
+    const iframe = document.querySelector("#book-calendly-embed iframe");
+    if (iframe && iframeSignalsDetailsForm(iframe)) {
+      blockBookCalendlyUntilDeposit();
+    }
+  }, 250);
+}
+
+function handleBookCalendlyDepositMessage(event) {
+  const name = parseCalendlyEventName(event);
+  if (!name.startsWith("calendly.") || bookingDepositPaid) return;
+  if (
+    name === "calendly.date_and_time_selected" ||
+    name === "calendly.event_scheduled"
+  ) {
+    blockBookCalendlyUntilDeposit();
+  }
+}
+
+function initBookCalendlyDepositIntercept() {
+  if (initBookCalendlyDepositIntercept.bound) return;
+  initBookCalendlyDepositIntercept.bound = true;
+  window.addEventListener("message", handleBookCalendlyDepositMessage, true);
+  watchBookCalendlyDetailsStep();
+}
+
+function initBookDepositPayButtons() {
+  bookingDepositPayButtons().forEach((btn) => {
+    if (btn.dataset.bound === "1") return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", startBookingDepositCheckout);
+  });
+  const backBtn = document.getElementById("book-deposit-lock-back");
+  if (backBtn && backBtn.dataset.bound !== "1") {
+    backBtn.dataset.bound = "1";
+    backBtn.addEventListener("click", resumeBookCalendlyBrowsing);
+  }
+}
+
 async function startBookingDepositCheckout() {
-  const payBtn = document.getElementById("book-deposit-pay");
-  if (payBtn) {
+  const payBtns = bookingDepositPayButtons();
+  payBtns.forEach((payBtn) => {
     if (!payBtn.dataset.defaultHtml) {
       payBtn.dataset.defaultHtml = payBtn.innerHTML;
     }
     payBtn.disabled = true;
     payBtn.textContent = "Redirecting to Stripe…";
-  }
+  });
 
   try {
     const response = await fetch("/api/create-booking-deposit-session", {
@@ -4289,12 +4407,18 @@ async function startBookingDepositCheckout() {
     }
     location.href = data.url;
   } catch (error) {
-    toast(error.message || "Unable to start deposit checkout.");
-    if (payBtn) {
+    const raw = error && error.message ? error.message : "";
+    const unreachable = /failed to fetch|networkerror|load failed/i.test(raw);
+    toast(
+      unreachable
+        ? "Could not reach the payment server. Open the site with npm run dev (http://localhost:8888), or pay on krownfrontz.com."
+        : raw || "Unable to start deposit checkout."
+    );
+    payBtns.forEach((payBtn) => {
       payBtn.disabled = false;
       payBtn.innerHTML = payBtn.dataset.defaultHtml || payBtn.innerHTML;
-      applyStaticPrices();
-    }
+    });
+    applyStaticPrices();
   }
 }
 
@@ -4302,11 +4426,9 @@ async function initBookDepositGate() {
   const embed = document.getElementById("book-calendly-embed");
   if (!embed) return;
 
-  const payBtn = document.getElementById("book-deposit-pay");
-  if (payBtn && !payBtn.dataset.bound) {
-    payBtn.dataset.bound = "1";
-    payBtn.addEventListener("click", startBookingDepositCheckout);
-  }
+  initBookDepositPayButtons();
+  initBookCalendlyDepositIntercept();
+  initBookCalendly();
 
   const params = new URLSearchParams(location.search);
   const returnSessionId = params.get("deposit_session_id");
@@ -4354,6 +4476,8 @@ function buildBookCalendlyUrl() {
   const params = new URLSearchParams({
     hide_event_type_details: "1",
     hide_gdpr_banner: "1",
+    embed_domain: location.host || "localhost",
+    embed_type: "Inline",
   });
   return `${BOOK_CALENDLY_EVENT_URL}?${params.toString()}`;
 }
@@ -4435,7 +4559,7 @@ function initBookCalendlyLoadWatch(parent) {
 
 function initBookCalendly() {
   const parent = document.getElementById("book-calendly-embed");
-  if (!parent) return;
+  if (!parent || parent.querySelector("iframe")) return;
 
   const order = shouldSkipBookPrefill() ? null : getBookingSelections();
   const notes = order?.product ? buildBookingStyleNotes(order) : "";

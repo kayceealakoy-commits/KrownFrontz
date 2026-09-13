@@ -5,10 +5,6 @@ const {
   validateEmail,
 } = require("../../lib/http-security");
 
-function json(statusCode, body) {
-  return corsJson(statusCode, body, "POST, OPTIONS");
-}
-
 function getResendConfig() {
   const apiKey = process.env.RESEND_API_KEY;
   const topicId = process.env.RESEND_NEWSLETTER_TOPIC_ID;
@@ -74,6 +70,8 @@ async function subscribeContact(apiKey, topicId, email) {
 }
 
 exports.handler = async (event) => {
+  const json = (statusCode, body) => corsJson(statusCode, body, "POST, OPTIONS", event);
+
   if (event.httpMethod === "OPTIONS") {
     return json(204, {});
   }
