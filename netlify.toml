@@ -1,3 +1,4 @@
+# Static site + Netlify Functions. Use relative paths only (Linux build image).
 [build]
   command = "npm install"
   publish = "."
