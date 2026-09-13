@@ -2450,6 +2450,8 @@ a[data-impression-instructions]:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .option-group label {
@@ -2540,6 +2542,7 @@ a[data-impression-instructions]:focus-visible {
   border-radius: var(--radius-lg);
   background: var(--color-surface-2);
   box-shadow: var(--shadow-hard);
+  min-width: 0;
   max-width: 100%;
   overflow: hidden;
 }
@@ -2569,8 +2572,9 @@ a[data-impression-instructions]:focus-visible {
 .tooth-picker__grid {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: stretch;
   gap: 12px;
+  width: 100%;
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -2579,10 +2583,11 @@ a[data-impression-instructions]:focus-visible {
 
 .tooth-picker__side-wrap {
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 6px;
-  flex-shrink: 0;
+  min-width: min-content;
 }
 
 .tooth-picker__side-label {
@@ -2591,14 +2596,15 @@ a[data-impression-instructions]:focus-visible {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted);
+  text-align: center;
 }
 
 .tooth-picker__side {
   display: flex;
   gap: 4px;
+  width: 100%;
   flex-wrap: nowrap;
-  justify-content: center;
-  flex-shrink: 0;
+  justify-content: stretch;
 }
 
 .tooth-picker__midline {
@@ -2618,6 +2624,7 @@ a[data-impression-instructions]:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 2px;
+  flex: 1 0 44px;
   min-width: 44px;
   min-height: 52px;
   padding: 6px 4px;
@@ -3406,6 +3413,7 @@ textarea {
   }
 
   .tooth-btn {
+    flex-basis: 36px;
     min-width: 36px;
     min-height: 44px;
   }
@@ -3512,6 +3520,7 @@ textarea {
   }
 
   .tooth-btn {
+    flex-basis: 34px;
     min-width: 34px;
     min-height: 42px;
     padding: 4px 2px;

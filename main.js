@@ -341,22 +341,22 @@ const DEFAULT_STONE_ID = "cubic-zirconia";
 const HAND_SET_DIAMOND_PRICES = {
   "diamond-canine": {
     "sterling-silver": {
-      "cubic-zirconia": 330,
+      "cubic-zirconia": 320,
       "moissanite": 370,
       "vvs-lab-diamonds": 770,
       "vs-natural-diamonds": 1020
     },
     "argentium-silver": {
       "cubic-zirconia": 330,
-      "moissanite": 370,
-      "vvs-lab-diamonds": 770,
-      "vs-natural-diamonds": 1020
+      "moissanite": 380,
+      "vvs-lab-diamonds": 780,
+      "vs-natural-diamonds": 1030
     },
     "dental-gold": {
-      "cubic-zirconia": 570,
-      "moissanite": 620,
-      "vvs-lab-diamonds": 995,
-      "vs-natural-diamonds": 1250
+      "cubic-zirconia": 330,
+      "moissanite": 380,
+      "vvs-lab-diamonds": 780,
+      "vs-natural-diamonds": 1030
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 570,
@@ -385,22 +385,22 @@ const HAND_SET_DIAMOND_PRICES = {
   },
   "diamond-lateral": {
     "sterling-silver": {
-      "cubic-zirconia": 260,
+      "cubic-zirconia": 290,
       "moissanite": 295,
       "vvs-lab-diamonds": 570,
       "vs-natural-diamonds": 770
     },
     "argentium-silver": {
-      "cubic-zirconia": 260,
-      "moissanite": 295,
-      "vvs-lab-diamonds": 570,
-      "vs-natural-diamonds": 770
+      "cubic-zirconia": 300,
+      "moissanite": 305,
+      "vvs-lab-diamonds": 580,
+      "vs-natural-diamonds": 780
     },
     "dental-gold": {
-      "cubic-zirconia": 450,
-      "moissanite": 520,
-      "vvs-lab-diamonds": 770,
-      "vs-natural-diamonds": 950
+      "cubic-zirconia": 300,
+      "moissanite": 305,
+      "vvs-lab-diamonds": 580,
+      "vs-natural-diamonds": 780
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 450,
@@ -435,16 +435,16 @@ const HAND_SET_DIAMOND_PRICES = {
       "vs-natural-diamonds": 750
     },
     "argentium-silver": {
-      "cubic-zirconia": 290,
-      "moissanite": 330,
-      "vvs-lab-diamonds": 620,
-      "vs-natural-diamonds": 750
+      "cubic-zirconia": 300,
+      "moissanite": 340,
+      "vvs-lab-diamonds": 630,
+      "vs-natural-diamonds": 760
     },
     "dental-gold": {
-      "cubic-zirconia": 480,
-      "moissanite": 520,
-      "vvs-lab-diamonds": 720,
-      "vs-natural-diamonds": 970
+      "cubic-zirconia": 300,
+      "moissanite": 340,
+      "vvs-lab-diamonds": 630,
+      "vs-natural-diamonds": 760
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 480,
@@ -473,22 +473,22 @@ const HAND_SET_DIAMOND_PRICES = {
   },
   "diamond-window-canine": {
     "sterling-silver": {
-      "cubic-zirconia": 230,
-      "moissanite": 270,
+      "cubic-zirconia": 270,
+      "moissanite": 310,
       "vvs-lab-diamonds": 410,
       "vs-natural-diamonds": 540
     },
     "argentium-silver": {
-      "cubic-zirconia": 230,
-      "moissanite": 270,
-      "vvs-lab-diamonds": 410,
-      "vs-natural-diamonds": 540
+      "cubic-zirconia": 280,
+      "moissanite": 320,
+      "vvs-lab-diamonds": 420,
+      "vs-natural-diamonds": 550
     },
     "dental-gold": {
-      "cubic-zirconia": 380,
-      "moissanite": 445,
-      "vvs-lab-diamonds": 595,
-      "vs-natural-diamonds": 720
+      "cubic-zirconia": 280,
+      "moissanite": 320,
+      "vvs-lab-diamonds": 420,
+      "vs-natural-diamonds": 550
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 380,
@@ -523,16 +523,16 @@ const HAND_SET_DIAMOND_PRICES = {
       "vs-natural-diamonds": 1995
     },
     "argentium-silver": {
-      "cubic-zirconia": 600,
-      "moissanite": 695,
-      "vvs-lab-diamonds": 1495,
-      "vs-natural-diamonds": 1995
+      "cubic-zirconia": 610,
+      "moissanite": 705,
+      "vvs-lab-diamonds": 1505,
+      "vs-natural-diamonds": 2005
     },
     "dental-gold": {
-      "cubic-zirconia": 1070,
-      "moissanite": 1170,
-      "vvs-lab-diamonds": 1970,
-      "vs-natural-diamonds": 2470
+      "cubic-zirconia": 610,
+      "moissanite": 705,
+      "vvs-lab-diamonds": 1505,
+      "vs-natural-diamonds": 2005
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 1070,
@@ -567,16 +567,16 @@ const HAND_SET_DIAMOND_PRICES = {
       "vs-natural-diamonds": 1830
     },
     "argentium-silver": {
-      "cubic-zirconia": 460,
-      "moissanite": 520,
-      "vvs-lab-diamonds": 1095,
-      "vs-natural-diamonds": 1830
+      "cubic-zirconia": 470,
+      "moissanite": 530,
+      "vvs-lab-diamonds": 1105,
+      "vs-natural-diamonds": 1840
     },
     "dental-gold": {
-      "cubic-zirconia": 840,
-      "moissanite": 920,
-      "vvs-lab-diamonds": 1470,
-      "vs-natural-diamonds": 2220
+      "cubic-zirconia": 470,
+      "moissanite": 530,
+      "vvs-lab-diamonds": 1105,
+      "vs-natural-diamonds": 1840
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 840,
@@ -611,16 +611,16 @@ const HAND_SET_DIAMOND_PRICES = {
       "vs-natural-diamonds": 1720
     },
     "argentium-silver": {
-      "cubic-zirconia": 530,
-      "moissanite": 610,
-      "vvs-lab-diamonds": 1295,
-      "vs-natural-diamonds": 1720
+      "cubic-zirconia": 540,
+      "moissanite": 620,
+      "vvs-lab-diamonds": 1305,
+      "vs-natural-diamonds": 1730
     },
     "dental-gold": {
-      "cubic-zirconia": 950,
-      "moissanite": 1030,
-      "vvs-lab-diamonds": 1720,
-      "vs-natural-diamonds": 2145
+      "cubic-zirconia": 540,
+      "moissanite": 620,
+      "vvs-lab-diamonds": 1305,
+      "vs-natural-diamonds": 1730
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 950,
@@ -649,22 +649,22 @@ const HAND_SET_DIAMOND_PRICES = {
   },
   "diamond-window-canine-inlay": {
     "sterling-silver": {
-      "cubic-zirconia": 245,
-      "moissanite": 290,
+      "cubic-zirconia": 320,
+      "moissanite": 365,
       "vvs-lab-diamonds": 490,
       "vs-natural-diamonds": 645
     },
     "argentium-silver": {
-      "cubic-zirconia": 245,
-      "moissanite": 290,
-      "vvs-lab-diamonds": 490,
-      "vs-natural-diamonds": 645
+      "cubic-zirconia": 330,
+      "moissanite": 375,
+      "vvs-lab-diamonds": 500,
+      "vs-natural-diamonds": 655
     },
     "dental-gold": {
-      "cubic-zirconia": 530,
-      "moissanite": 590,
-      "vvs-lab-diamonds": 790,
-      "vs-natural-diamonds": 945
+      "cubic-zirconia": 330,
+      "moissanite": 375,
+      "vvs-lab-diamonds": 500,
+      "vs-natural-diamonds": 655
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 530,
@@ -693,22 +693,22 @@ const HAND_SET_DIAMOND_PRICES = {
   },
   "diamond-window-lateral-canine": {
     "sterling-silver": {
-      "cubic-zirconia": 320,
+      "cubic-zirconia": 340,
       "moissanite": 370,
       "vvs-lab-diamonds": 670,
       "vs-natural-diamonds": 890
     },
     "argentium-silver": {
-      "cubic-zirconia": 320,
-      "moissanite": 370,
-      "vvs-lab-diamonds": 670,
-      "vs-natural-diamonds": 890
+      "cubic-zirconia": 350,
+      "moissanite": 380,
+      "vvs-lab-diamonds": 680,
+      "vs-natural-diamonds": 900
     },
     "dental-gold": {
-      "cubic-zirconia": 645,
-      "moissanite": 695,
-      "vvs-lab-diamonds": 1010,
-      "vs-natural-diamonds": 1230
+      "cubic-zirconia": 350,
+      "moissanite": 380,
+      "vvs-lab-diamonds": 680,
+      "vs-natural-diamonds": 900
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 645,
@@ -743,16 +743,16 @@ const HAND_SET_DIAMOND_PRICES = {
       "vs-natural-diamonds": 320
     },
     "argentium-silver": {
-      "cubic-zirconia": 190,
-      "moissanite": 220,
-      "vvs-lab-diamonds": 270,
-      "vs-natural-diamonds": 320
+      "cubic-zirconia": 200,
+      "moissanite": 230,
+      "vvs-lab-diamonds": 280,
+      "vs-natural-diamonds": 330
     },
     "dental-gold": {
-      "cubic-zirconia": 270,
-      "moissanite": 320,
-      "vvs-lab-diamonds": 370,
-      "vs-natural-diamonds": 420
+      "cubic-zirconia": 200,
+      "moissanite": 230,
+      "vvs-lab-diamonds": 280,
+      "vs-natural-diamonds": 330
     },
     "9ct-yellow-gold": {
       "cubic-zirconia": 270,
@@ -1247,7 +1247,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "1",
     toothRule: "single-central",
-    blurb: "Single central cap. Minimal statement.",
+    blurb: "Unique central cap",
   },
   {
     id: "canine-canine",
@@ -1273,7 +1273,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "2",
     toothRule: "arch-laterals",
-    blurb: "Both laterals on upper or lower teeth. Clean double cap.",
+    blurb: "Symmetrical pair on upper or lower laterals.",
   },
   {
     id: "canine-lateral-2x",
@@ -1286,7 +1286,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "4",
     toothRule: "both-side-canine-lateral",
-    blurb: "Canine and lateral caps on two sides.",
+    blurb: "Canine and lateral caps on both sides.",
   },
   {
     id: "lateral-canine",
@@ -1299,7 +1299,7 @@ const PRODUCTS = [
     style: "basics",
     teeth: "2",
     toothRule: "lateral-canine-cross",
-    blurb: "Lateral and canine caps — adjacent or opposite sides.",
+    blurb: "Lateral and canine cap, side of your choice.",
   },
   {
     id: "canine-window",
@@ -1372,6 +1372,7 @@ const PRODUCTS = [
     displayName: "6 set",
     price: 450,
     compareAt: 520,
+    pricingPremiumBase: 295,
     image: "assets/products/plain-6.webp?v=castzoom1",
     imageAlt: "6 set grillz on dental model",
     finish: "gold",
@@ -1385,6 +1386,7 @@ const PRODUCTS = [
     displayName: "8 set",
     price: 580,
     compareAt: 650,
+    pricingPremiumBase: 340,
     image: "assets/products/plain-8.webp?v=castzoom1",
     imageAlt: "8 set grillz on dental model",
     finish: "gold",
@@ -1398,6 +1400,8 @@ const PRODUCTS = [
     displayName: "4 on 4",
     price: 680,
     compareAt: 780,
+    pricingSterlingBase: 330,
+    pricingPremiumBase: 340,
     image: "assets/products/top-4-bottom-4.webp?v=castzoom1",
     imageAlt: "Top 4 bottom 4 plain grillz on dental model",
     finish: "gold",
@@ -1405,13 +1409,15 @@ const PRODUCTS = [
     teeth: "8",
     toothRule: "both-arch-contiguous",
     chartMode: "both",
-    blurb: "Four contiguous teeth on top and bottom. Plain set.",
+    blurb: "Four contiguous teeth on top and bottom. Choose your placement below.",
   },
   {
     id: "top-6-bottom-6",
     displayName: "6 on 6",
     price: 900,
     compareAt: 1050,
+    pricingSterlingBase: 480,
+    pricingPremiumBase: 490,
     image: "assets/products/top-6-bottom-6.webp?v=castzoom1",
     imageAlt: "Top 6 bottom 6 plain grillz on dental model",
     finish: "gold",
@@ -1419,7 +1425,7 @@ const PRODUCTS = [
     teeth: "12",
     toothRule: "both-arch-contiguous",
     chartMode: "both",
-    blurb: "Six contiguous teeth on top and bottom. Plain full smile.",
+    blurb: "Six contiguous teeth on top and bottom. Guaranteed statement piece.",
   },
   {
     id: "top-8-bottom-8",
@@ -1433,7 +1439,7 @@ const PRODUCTS = [
     teeth: "16",
     toothRule: "both-arch-contiguous",
     chartMode: "both",
-    blurb: "Eight contiguous teeth on top and bottom. Maximum plain set.",
+    blurb: "Eight contiguous teeth on top and bottom. Guaranteed to turn heads.",
   },
   {
     id: "window-canine-bar",
@@ -1491,7 +1497,7 @@ const PRODUCTS = [
     teeth: "6",
     chartMode: "lower",
     toothRule: "contiguous-front",
-    blurb: "Lower canines connected by an inlay across the front four.",
+    blurb: "Plain canine cap connected to a lateral inlay on both sides.",
   },
   {
     id: "window-canine",
@@ -1543,7 +1549,7 @@ const PRODUCTS = [
     style: "window",
     teeth: "4",
     toothRule: "contiguous-front",
-    blurb: "Cut-out windows on the front four.",
+    blurb: "Cut-out windows on the front four. Choose placement below.",
   },
   {
     id: "open-face-6",
@@ -1585,7 +1591,7 @@ const PRODUCTS = [
     teeth: "12",
     toothRule: "both-arch-contiguous",
     chartMode: "both",
-    blurb: "Open face frames on upper and lower. Six contiguous teeth.",
+    blurb: "Open face frames on upper and lower teeth.",
   },
   {
     id: "open-face-8-on-8",
@@ -1660,13 +1666,14 @@ const PRODUCTS = [
     price: 175,
     compareAt: 210,
     pricingSterlingBase: 115,
+    pricingPremiumBase: 125,
     image: "assets/products/vampire-canines.webp?v=castzoom1",
     imageAlt: "Vampire canine grillz on dental model",
     finish: "gold",
     style: "vampire",
     teeth: "2",
     toothRule: "arch-canines",
-    blurb: "Pointed vampire canines. Sharp pair.",
+    blurb: "Pointy vampire canines.",
   },
   {
     id: "vampire-canine-lateral-2",
@@ -1680,7 +1687,7 @@ const PRODUCTS = [
     style: "vampire",
     teeth: "2",
     toothRule: "canine-lateral-pair",
-    blurb: "Extended canines with lateral caps.",
+    blurb: "Pointy canine with lateral cap.",
   },
   {
     id: "dust-canine",
@@ -1693,7 +1700,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "1",
     toothRule: "single-canine",
-    blurb: "Micro-cut dust finish on a single canine.",
+    blurb: "Micro-cut dust finish on a single canine. Premium look at a cheaper price.",
   },
   {
     id: "dust-lateral",
@@ -1706,7 +1713,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "1",
     toothRule: "single-lateral",
-    blurb: "Micro-cut dust finish on a single lateral.",
+    blurb: "Micro-cut dust finish on a single lateral. Premium look at a cheaper price.",
   },
   {
     id: "dust-central",
@@ -1719,7 +1726,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "1",
     toothRule: "single-central",
-    blurb: "Micro-cut dust finish on a single central.",
+    blurb: "Micro-cut dust finish on a single central. Premium look at a cheaper price.",
   },
   {
     id: "dust-canine-pair",
@@ -1732,7 +1739,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-canines",
-    blurb: "Dust finish on both canines on upper or lower teeth.",
+    blurb: "Dust finish on both canines on upper or lower teeth. Premium look at a cheaper price.",
   },
   {
     id: "dust-lateral-pair",
@@ -1745,7 +1752,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-laterals",
-    blurb: "Dust finish on both laterals on upper or lower teeth.",
+    blurb: "Dust finish on both laterals on upper or lower teeth. Premium look at a cheaper price.",
   },
   {
     id: "dust-central-pair",
@@ -1758,7 +1765,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-centrals",
-    blurb: "Dust finish on both centrals on upper or lower teeth.",
+    blurb: "Dust finish on both centrals on upper or lower teeth. Premium look at a cheaper price.",
   },
   {
     id: "dust-canines-4",
@@ -1771,7 +1778,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "4",
     toothRule: "both-arch-canines",
-    blurb: "Dust finish on all four canines.",
+    blurb: "Dust finish on all four canines. Premium look at a cheaper price.",
   },
   {
     id: "dust-laterals-4",
@@ -1784,7 +1791,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "4",
     toothRule: "both-arch-laterals",
-    blurb: "Dust finish on all four laterals.",
+    blurb: "Dust finish on all four laterals. Premium look at a cheaper price.",
   },
   {
     id: "dust-centrals-4",
@@ -1797,7 +1804,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "4",
     toothRule: "both-arch-centrals",
-    blurb: "Dust finish on all four centrals.",
+    blurb: "Dust finish on all four centrals. Premium look at a cheaper price.",
   },
   {
     id: "diamond-dust-4",
@@ -1810,12 +1817,12 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "4",
     toothRule: "contiguous-front",
-    blurb: "Micro-cut dust finish. Glitter without stones.",
+    blurb: "Micro-cut dust finish on 4 contiguous teeth of your choice. Premium look at a cheaper price.",
   },
   {
     id: "diamond-canine",
     displayName: "Diamond Canine",
-    price: 360,
+    price: 320,
     compareAt: 420,
     image: "assets/products/diamond-canine.webp?v=castzoom1",
     imageAlt: "Diamond canine grillz on dental model",
@@ -1823,7 +1830,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "1",
     toothRule: "single-canine",
-    blurb: "Hand-set stones on a single canine cap.",
+    blurb: "Hand-set stones on a single canine cap. Select your choice of stone and tooth below.",
   },
   {
     id: "diamond-lateral",
@@ -1836,7 +1843,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "1",
     toothRule: "single-lateral",
-    blurb: "Hand-set stones on a single lateral cap.",
+    blurb: "Hand-set stones on a single lateral cap. Select your choice of stone and tooth below.",
   },
   {
     id: "diamond-heart-canine",
@@ -1849,12 +1856,12 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "1",
     toothRule: "single-canine",
-    blurb: "Heart window canine with hand-set stones.",
+    blurb: "Heart window canine with hand-set stones. Select your choice of stone and tooth below.",
   },
   {
     id: "diamond-window-canine",
     displayName: "Diamond Window Canine",
-    price: 260,
+    price: 270,
     compareAt: 305,
     image: "assets/products/diamond-window-canine.webp?v=castzoom1",
     imageAlt: "Diamond window canine grillz on dental model",
@@ -1862,7 +1869,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "1",
     toothRule: "single-canine",
-    blurb: "Window canine with hand-set stones.",
+    blurb: "Window canine with hand-set stones. Select your choice of stone and tooth below.",
   },
   {
     id: "diamond-canine-canine",
@@ -1875,7 +1882,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-canines",
-    blurb: "Hand-set stones on both canines on upper or lower teeth.",
+    blurb: "Hand-set stones on both canines on upper or lower teeth. Select your choice of stone and teeth below.",
   },
   {
     id: "diamond-lateral-lateral",
@@ -1888,7 +1895,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "arch-laterals",
-    blurb: "Hand-set stones on both laterals on upper or lower teeth.",
+    blurb: "Hand-set stones on both laterals on upper or lower teeth. Select your choice of stone and teeth below.",
   },
   {
     id: "diamond-lateral-canine",
@@ -1901,12 +1908,12 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "canine-lateral-pair",
-    blurb: "Hand-set stones on canine and lateral pair.",
+    blurb: "Hand-set stones on canine and lateral pair. Select your choice of stone and teeth below.",
   },
   {
     id: "diamond-window-canine-inlay",
     displayName: "Diamond Window Canine & Inlay",
-    price: 275,
+    price: 320,
     compareAt: 320,
     image: "assets/products/diamond-window-canine-inlay.webp?v=castzoom1",
     imageAlt: "Diamond window canine and inlay grillz on dental model",
@@ -1914,12 +1921,12 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "canine-bar-pair",
-    blurb: "Window canine with diamond-set lateral inlay.",
+    blurb: "Window canine with diamond-set lateral inlay. Select your choice of stone and teeth below.",
   },
   {
     id: "diamond-window-lateral-canine",
     displayName: "Diamond Window Lateral & Canine",
-    price: 350,
+    price: 340,
     compareAt: 405,
     image: "assets/products/diamond-window-lateral-canine.webp?v=castzoom1",
     imageAlt: "Diamond window lateral and canine grillz on dental model",
@@ -1927,7 +1934,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "canine-lateral-pair",
-    blurb: "Window cuts with hand-set stones on canine and lateral.",
+    blurb: "Window cuts with hand-set stones on canine and lateral. Select your choice of stone and teeth below.",
   },
   {
     id: "window-canine-diamond-inlay",
@@ -1940,7 +1947,7 @@ const PRODUCTS = [
     style: "diamond",
     teeth: "2",
     toothRule: "canine-bar-pair",
-    blurb: "Window canine with diamond-set lateral inlay.",
+    blurb: "Window canine with diamond-set lateral inlay. Select your choice of stone and teeth below.",
   },
 
 ];

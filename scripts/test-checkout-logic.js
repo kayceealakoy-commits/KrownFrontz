@@ -8,7 +8,7 @@
 
 const { buildPricedCheckout, productPrice, productFromPrice, isHandSetDiamond, findProduct } = require("../lib/pricing");
 
-const { PRODUCTS, SHIPPING_ZONES } = require("../lib/catalog-data");
+const { PRODUCTS, SHIPPING_ZONES, STONE_OPTIONS } = require("../lib/catalog-data");
 
 const { chunkMetadata, joinMetadataChunks } = require("../lib/stripe-metadata");
 
@@ -377,13 +377,33 @@ if (top4Bottom4.toothRule !== "both-arch-contiguous") {
   process.exit(1);
 }
 
-if (productFromPrice(top4Bottom4) !== 340) {
-  console.error("✗ 4 on 4 sterling from-price mismatch:", productFromPrice(top4Bottom4), "expected 340");
+if (productFromPrice(top4Bottom4) !== 330) {
+  console.error("✗ 4 on 4 sterling from-price mismatch:", productFromPrice(top4Bottom4), "expected 330");
   process.exit(1);
 }
 
-if (productFromPrice(top6Bottom6) !== 490) {
-  console.error("✗ 6 on 6 sterling from-price mismatch:", productFromPrice(top6Bottom6), "expected 490");
+if (productPrice(top4Bottom4, "dental-gold") !== 340) {
+  console.error("✗ 4 on 4 dental-gold price mismatch:", productPrice(top4Bottom4, "dental-gold"), "expected 340");
+  process.exit(1);
+}
+
+if (productPrice(top4Bottom4, "argentium-silver") !== 340) {
+  console.error("✗ 4 on 4 argentium-silver price mismatch:", productPrice(top4Bottom4, "argentium-silver"), "expected 340");
+  process.exit(1);
+}
+
+if (productFromPrice(top6Bottom6) !== 480) {
+  console.error("✗ 6 on 6 sterling from-price mismatch:", productFromPrice(top6Bottom6), "expected 480");
+  process.exit(1);
+}
+
+if (productPrice(top6Bottom6, "dental-gold") !== 490) {
+  console.error("✗ 6 on 6 dental-gold price mismatch:", productPrice(top6Bottom6, "dental-gold"), "expected 490");
+  process.exit(1);
+}
+
+if (productPrice(top6Bottom6, "argentium-silver") !== 490) {
+  console.error("✗ 6 on 6 argentium-silver price mismatch:", productPrice(top6Bottom6, "argentium-silver"), "expected 490");
   process.exit(1);
 }
 
@@ -397,13 +417,24 @@ if (productFromPrice(plain8) !== 330) {
   process.exit(1);
 }
 
-if (productPrice(plain8, "dental-gold") !== 350) {
-  console.error("✗ 8 set dental-gold price mismatch:", productPrice(plain8, "dental-gold"), "expected 350");
+const plain6 = findProduct("plain-6");
+if (productPrice(plain6, "dental-gold") !== 295) {
+  console.error("✗ 6 set dental-gold price mismatch:", productPrice(plain6, "dental-gold"), "expected 295");
   process.exit(1);
 }
 
-if (productPrice(plain8, "argentium-silver") !== 350) {
-  console.error("✗ 8 set argentium-silver price mismatch:", productPrice(plain8, "argentium-silver"), "expected 350");
+if (productPrice(plain6, "argentium-silver") !== 295) {
+  console.error("✗ 6 set argentium-silver price mismatch:", productPrice(plain6, "argentium-silver"), "expected 295");
+  process.exit(1);
+}
+
+if (productPrice(plain8, "dental-gold") !== 340) {
+  console.error("✗ 8 set dental-gold price mismatch:", productPrice(plain8, "dental-gold"), "expected 340");
+  process.exit(1);
+}
+
+if (productPrice(plain8, "argentium-silver") !== 340) {
+  console.error("✗ 8 set argentium-silver price mismatch:", productPrice(plain8, "argentium-silver"), "expected 340");
   process.exit(1);
 }
 
@@ -428,8 +459,8 @@ for (const product of PRODUCTS) {
 }
 
 const diamondCanine = findProduct("diamond-canine");
-if (productFromPrice(diamondCanine) !== 330) {
-  console.error("✗ diamond-canine from-price mismatch:", productFromPrice(diamondCanine), "expected 330");
+if (productFromPrice(diamondCanine) !== 320) {
+  console.error("✗ diamond-canine from-price mismatch:", productFromPrice(diamondCanine), "expected 320");
   process.exit(1);
 }
 
@@ -484,13 +515,90 @@ const defaultStoneCheckout = buildPricedCheckout({
 
 const defaultStoneGrillz = defaultStoneCheckout.cart.items.find((item) => item.kind === "grillz");
 const defaultStoneLine = defaultStoneCheckout.fulfillment.find((line) => line.kind === "grillz");
-if (!defaultStoneLine || defaultStoneLine.amountGbp !== 330) {
-  console.error("✗ diamond-canine default stone checkout mismatch:", defaultStoneLine?.amountGbp, "expected 330");
+if (!defaultStoneLine || defaultStoneLine.amountGbp !== 320) {
+  console.error("✗ diamond-canine default stone checkout mismatch:", defaultStoneLine?.amountGbp, "expected 320");
   process.exit(1);
 }
 
 if (defaultStoneGrillz?.stone !== "cubic-zirconia") {
   console.error("✗ diamond-canine cart should default stone to cubic-zirconia");
+  process.exit(1);
+}
+
+const diamondStones = STONE_OPTIONS.map((s) => s.id);
+const diamondWindowInlay = findProduct("diamond-window-canine-inlay");
+if (productPrice(diamondWindowInlay, "dental-gold", "cubic-zirconia") !== 330) {
+  console.error(
+    "✗ diamond-window-canine-inlay dental-gold CZ mismatch:",
+    productPrice(diamondWindowInlay, "dental-gold", "cubic-zirconia"),
+    "expected 330 (sterling + £10)"
+  );
+  process.exit(1);
+}
+
+if (productPrice(diamondWindowInlay, "9ct-yellow-gold", "cubic-zirconia") !== 530) {
+  console.error(
+    "✗ diamond-window-canine-inlay 9ct CZ mismatch:",
+    productPrice(diamondWindowInlay, "9ct-yellow-gold", "cubic-zirconia"),
+    "expected 530"
+  );
+  process.exit(1);
+}
+
+for (const product of PRODUCTS.filter(isHandSetDiamond)) {
+  for (const stone of diamondStones) {
+    const dental = productPrice(product, "dental-gold", stone);
+    const argentium = productPrice(product, "argentium-silver", stone);
+    const sterling = productPrice(product, "sterling-silver", stone);
+    const nineCt = productPrice(product, "9ct-yellow-gold", stone);
+    if (dental !== argentium) {
+      console.error(
+        `✗ ${product.id} dental-gold/${stone} should match argentium:`,
+        dental,
+        "vs",
+        argentium
+      );
+      process.exit(1);
+    }
+    if (dental !== sterling + 10) {
+      console.error(
+        `✗ ${product.id} dental-gold/${stone} should be sterling + £10:`,
+        dental,
+        "vs",
+        sterling
+      );
+      process.exit(1);
+    }
+    if (dental === nineCt) {
+      console.error(`✗ ${product.id} dental-gold/${stone} should not match 9ct:`, dental);
+      process.exit(1);
+    }
+  }
+}
+
+const vampireCanines = findProduct("vampire-canines");
+if (productPrice(vampireCanines, "sterling-silver") !== 115) {
+  console.error(
+    "✗ vampire-canines sterling mismatch:",
+    productPrice(vampireCanines, "sterling-silver"),
+    "expected 115"
+  );
+  process.exit(1);
+}
+if (productPrice(vampireCanines, "dental-gold") !== 125) {
+  console.error(
+    "✗ vampire-canines dental-gold mismatch:",
+    productPrice(vampireCanines, "dental-gold"),
+    "expected 125"
+  );
+  process.exit(1);
+}
+if (productPrice(vampireCanines, "argentium-silver") !== 125) {
+  console.error(
+    "✗ vampire-canines argentium mismatch:",
+    productPrice(vampireCanines, "argentium-silver"),
+    "expected 125"
+  );
   process.exit(1);
 }
 
@@ -509,8 +617,8 @@ const dualArchCheckout = buildPricedCheckout({
 });
 
 const grillzLine = dualArchCheckout.fulfillment.find((line) => line.kind === "grillz");
-if (!grillzLine || grillzLine.amountGbp !== 490) {
-  console.error("✗ Checkout grillz line for 6 on 6 mismatch:", grillzLine?.amountGbp, "expected 490");
+if (!grillzLine || grillzLine.amountGbp !== 480) {
+  console.error("✗ Checkout grillz line for 6 on 6 mismatch:", grillzLine?.amountGbp, "expected 480");
   process.exit(1);
 }
 
@@ -529,8 +637,8 @@ const fourOnFourCheckout = buildPricedCheckout({
 });
 
 const fourOnFourGrillzLine = fourOnFourCheckout.fulfillment.find((line) => line.kind === "grillz");
-if (!fourOnFourGrillzLine || fourOnFourGrillzLine.amountGbp !== 340) {
-  console.error("✗ Checkout grillz line for 4 on 4 mismatch:", fourOnFourGrillzLine?.amountGbp, "expected 340");
+if (!fourOnFourGrillzLine || fourOnFourGrillzLine.amountGbp !== 330) {
+  console.error("✗ Checkout grillz line for 4 on 4 mismatch:", fourOnFourGrillzLine?.amountGbp, "expected 330");
   process.exit(1);
 }
 
@@ -549,8 +657,8 @@ const plain8Checkout = buildPricedCheckout({
 });
 
 const plain8GrillzLine = plain8Checkout.fulfillment.find((line) => line.kind === "grillz");
-if (!plain8GrillzLine || plain8GrillzLine.amountGbp !== 350) {
-  console.error("✗ Checkout grillz line for 8 set dental-gold mismatch:", plain8GrillzLine?.amountGbp, "expected 350");
+if (!plain8GrillzLine || plain8GrillzLine.amountGbp !== 340) {
+  console.error("✗ Checkout grillz line for 8 set dental-gold mismatch:", plain8GrillzLine?.amountGbp, "expected 340");
   process.exit(1);
 }
 
@@ -572,5 +680,7 @@ console.log("✓ Sterling shop/product parity for non-diamond grillz SKUs");
 console.log("✓ diamond-canine from-price:", productFromPrice(diamondCanine));
 console.log("✓ diamond-canine moissanite price:", productPrice(diamondCanine, "sterling-silver", "moissanite"));
 console.log("✓ diamond-canine checkout with stone:", diamondGrillzLine.amountGbp);
+console.log("✓ diamond-window-canine-inlay dental-gold CZ:", productPrice(diamondWindowInlay, "dental-gold", "cubic-zirconia"));
+console.log("✓ hand-set diamond dental-gold matches argentium and not 9ct");
 
 

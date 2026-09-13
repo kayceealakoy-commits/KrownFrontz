@@ -189,7 +189,13 @@ const ToothPicker = (function () {
     return position === 2 || position === 3;
   }
 
+  function isBackMolar(id) {
+    const position = TOOTH_POSITIONS[id]?.position;
+    return position === 7 || position === 8;
+  }
+
   function isToothVisibleInChart(id, product) {
+    if (isBackMolar(id)) return false;
     const mode = getChartMode(product);
     if (mode === "both") return true;
     if (mode === "upper") return toothArch(id) === "upper";
@@ -697,6 +703,20 @@ const ToothPicker = (function () {
     container.appendChild(row);
   }
 
+  function centerToothGrids(root) {
+    root.querySelectorAll(".tooth-picker__grid").forEach((grid) => {
+      const mid = grid.querySelector(".tooth-picker__midline");
+      if (!mid) {
+        grid.scrollLeft = Math.max(0, (grid.scrollWidth - grid.clientWidth) / 2);
+        return;
+      }
+      const gridRect = grid.getBoundingClientRect();
+      const midRect = mid.getBoundingClientRect();
+      const midCenter = grid.scrollLeft + (midRect.left + midRect.width / 2 - gridRect.left);
+      grid.scrollLeft = midCenter - grid.clientWidth / 2;
+    });
+  }
+
   function onToothClick(id) {
     if (state.readOnly) return;
     state.selected = applySelectionRule(id, state.product);
@@ -756,6 +776,8 @@ const ToothPicker = (function () {
         : "No teeth selected yet.";
       root.appendChild(summary);
     }
+
+    requestAnimationFrame(() => centerToothGrids(root));
   }
 
   function init(product, options = {}) {

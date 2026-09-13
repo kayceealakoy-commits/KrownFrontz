@@ -35,8 +35,9 @@ K9_MATERIAL_TO_KROWN = {
 
 KROWN_MATERIALS_FROM_K9 = {
     "sterling-silver": ["Sterling Silver", "Silver"],
+    # Dental gold is a non-precious alloy: same rates as argentium, not 9ct.
     "argentium-silver": ["Sterling Silver", "Silver"],
-    "dental-gold": ["9ct Yellow Gold"],
+    "dental-gold": ["Sterling Silver", "Silver"],
     "9ct-yellow-gold": ["9ct Yellow Gold"],
     "9ct-white-gold": ["9ct White Gold"],
     "14ct-yellow-gold": ["18ct Yellow Gold"],
@@ -95,6 +96,8 @@ def build_matrix(products_by_handle: dict[str, dict]) -> dict:
                     raise ValueError(
                         f"No K9 price for {krown_id} / {krown_mat} / {k9_stone}"
                     )
+                if krown_mat in ("argentium-silver", "dental-gold"):
+                    price += 10
                 matrix[krown_id][krown_mat][stone_id] = price
     return matrix
 
