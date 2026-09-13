@@ -2507,8 +2507,9 @@ function initBestsellers() {
   let rafId = 0;
   let paused = false;
   let resumeTimer = null;
-  const speed = 0.75;
-  const resumeDelayMs = 3000;
+  let scrollPos = 0;
+  const speed = 1.15;
+  const resumeDelayMs = 2800;
 
   function halfWidth() {
     return track.scrollWidth / 2;
@@ -2518,14 +2519,19 @@ function initBestsellers() {
     viewport.classList.toggle("is-auto-scrolling", active);
   }
 
+  function syncScrollPos() {
+    scrollPos = viewport.scrollLeft;
+  }
+
   function loopScroll() {
     if (!paused) {
       setAutoScrolling(true);
-      viewport.scrollLeft += speed;
+      scrollPos += speed;
       const half = halfWidth();
-      if (half > 0 && viewport.scrollLeft >= half) {
-        viewport.scrollLeft -= half;
+      if (half > 0 && scrollPos >= half) {
+        scrollPos -= half;
       }
+      viewport.scrollLeft = scrollPos;
     } else {
       setAutoScrolling(false);
     }
@@ -2535,6 +2541,7 @@ function initBestsellers() {
   function pause() {
     paused = true;
     setAutoScrolling(false);
+    syncScrollPos();
     if (resumeTimer) clearTimeout(resumeTimer);
     resumeTimer = null;
   }
@@ -2543,6 +2550,7 @@ function initBestsellers() {
     if (prefersReducedMotion) return;
     if (resumeTimer) clearTimeout(resumeTimer);
     resumeTimer = setTimeout(() => {
+      syncScrollPos();
       paused = false;
       setAutoScrolling(true);
     }, resumeDelayMs);
@@ -2561,6 +2569,7 @@ function initBestsellers() {
     if (half <= 0) return;
     if (viewport.scrollLeft >= half) viewport.scrollLeft -= half;
     if (viewport.scrollLeft < 0) viewport.scrollLeft += half;
+    syncScrollPos();
   }
 
   function scrollByCards(direction) {
@@ -2571,14 +2580,17 @@ function initBestsellers() {
     } catch (_) {
       viewport.scrollLeft += delta;
     }
-    setTimeout(normalizeLoop, 400);
+    setTimeout(() => {
+      normalizeLoop();
+      syncScrollPos();
+    }, 400);
     scheduleResume();
   }
 
   prevBtn?.addEventListener("click", () => scrollByCards(-1));
   nextBtn?.addEventListener("click", () => scrollByCards(1));
 
-  ["pointerdown", "touchstart", "focusin"].forEach((eventName) => {
+  ["focusin"].forEach((eventName) => {
     viewport.addEventListener(
       eventName,
       () => {
@@ -2590,6 +2602,30 @@ function initBestsellers() {
   });
 
   viewport.addEventListener(
+    "touchstart",
+    () => {
+      pause();
+    },
+    { passive: true }
+  );
+  viewport.addEventListener(
+    "touchend",
+    () => {
+      syncScrollPos();
+      scheduleResume();
+    },
+    { passive: true }
+  );
+  viewport.addEventListener(
+    "touchcancel",
+    () => {
+      syncScrollPos();
+      scheduleResume();
+    },
+    { passive: true }
+  );
+
+  viewport.addEventListener(
     "wheel",
     (e) => {
       const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
@@ -2598,6 +2634,7 @@ function initBestsellers() {
       pause();
       viewport.scrollLeft += delta;
       normalizeLoop();
+      syncScrollPos();
       scheduleResume();
     },
     { passive: false }
@@ -2617,6 +2654,7 @@ function initBestsellers() {
   viewport.addEventListener("pointerdown", (e) => {
     if (e.pointerType === "touch") return;
     if (e.button != null && e.button !== 0) return;
+    pause();
     dragging = true;
     dragMoved = false;
     activePointerId = e.pointerId;
@@ -2649,6 +2687,7 @@ function initBestsellers() {
       /* ignore */
     }
     normalizeLoop();
+    syncScrollPos();
     scheduleResume();
     // Keep wasDrag until after the click event; clear on the next frame.
     if (wasDrag) {
@@ -2671,6 +2710,7 @@ function initBestsellers() {
   );
 
   if (!prefersReducedMotion) {
+    syncScrollPos();
     setAutoScrolling(true);
     rafId = requestAnimationFrame(loopScroll);
   }

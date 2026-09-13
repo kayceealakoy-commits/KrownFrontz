@@ -3239,19 +3239,25 @@ textarea {
   .email-signup {
     flex-direction: column;
     align-items: stretch;
-    gap: 16px;
-    padding: 18px 20px;
+    gap: 12px;
+    padding: 16px 18px;
     width: calc(100% - (var(--page-pad) * 2));
+  }
+
+  .email-signup-copy {
+    flex: 0 1 auto;
   }
 
   .email-signup-form {
     flex-direction: column;
     align-items: stretch;
-    flex: 1 1 auto;
+    justify-content: flex-start;
+    flex: 0 1 auto;
+    gap: 12px;
   }
 
   .email-signup-email {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: 0;
   }
 
@@ -3264,12 +3270,22 @@ textarea {
     margin-bottom: 20px;
   }
 
+  .bestsellers-rail {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 var(--page-pad);
+  }
+
+  .bestsellers-nav {
+    display: none;
+  }
+
   .bestsellers-track {
     gap: 14px;
   }
 
   .bestsellers-track .product-card {
-    flex-basis: min(240px, 72vw);
+    flex-basis: min(280px, 82vw);
   }
 
   .home-showcase .client-carousel {
@@ -3501,7 +3517,7 @@ textarea {
   }
 
   .bestsellers-track .product-card {
-    flex-basis: min(220px, 78vw);
+    flex-basis: min(300px, 86vw);
   }
 
   .product-card-media {
@@ -3561,6 +3577,12 @@ textarea {
   .book-design {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .email-signup {
+    gap: 10px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   .footer-col {
