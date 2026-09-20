@@ -68,7 +68,7 @@ exports.handler = async (event) => {
             currency: "gbp",
             unit_amount: BOOKING_DEPOSIT_PENCE,
             product_data: {
-              name: "Studio impression booking deposit",
+              name: "In-person impression booking deposit",
               description: "Deducted from the final price of your grillz.",
             },
           },

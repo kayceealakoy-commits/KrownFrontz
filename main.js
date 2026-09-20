@@ -296,7 +296,7 @@ function getShippingZone(zoneId) {
 
 const STYLE_CATEGORIES = [
   { id: "basics", name: "Basics", desc: "Single caps and multi-tooth plain sets." },
-  { id: "bar", name: "Bar", desc: "Two canine caps connected by a front bar." },
+  { id: "bar", name: "Bar", desc: "Canine bars, inlays, and gap fillers." },
   { id: "window", name: "Window", desc: "Cut-out windows showing your natural tooth." },
   { id: "heart", name: "Heart", desc: "Heart-shaped window cuts." },
   { id: "star", name: "Star", desc: "Star cut-out designs. Single tooth or abstract 2-tooth." },
@@ -876,7 +876,7 @@ const ACCESSORIES = [
     image: "assets/products/repolish-service.webp?v=3",
     imageAlt: "Krown Frontz grillz packaged for repolishing",
     blurb:
-      "Send your set back for a professional polish. Post them to us (we email the studio return address after payment) or drop off in Manchester and pick them up when ready.",
+      "Send your set back for a professional polish. Post them to us (we email the return address after payment) or drop off in Manchester and pick them up when ready.",
   },
 ];
 
@@ -1500,6 +1500,22 @@ const PRODUCTS = [
     blurb: "Plain canine cap connected to a lateral inlay on both sides.",
   },
   {
+    id: "gap-filler",
+    displayName: "Gap Filler",
+    price: 90,
+    pricingSterlingBase: 90,
+    pricingPremiumBase: 100,
+    pricingPremiumPerTooth: 0,
+    image: "assets/products/gap-filler.webp?v=1",
+    imageAlt: "Gold gap filler between the upper central teeth on a dental model",
+    finish: "gold",
+    style: "bar",
+    teeth: "1",
+    chartMode: "both",
+    toothRule: "gap-filler",
+    blurb: "A slim bar that sits in the gap between two teeth.",
+  },
+  {
     id: "window-canine",
     displayName: "Window Canine",
     price: 105,
@@ -1970,7 +1986,6 @@ const CLIENT_LOOKS = [
   { src: "assets/clients/look-15.jpg", alt: "Client wearing polished silver cap on upper tooth" },
   { src: "assets/clients/look-16.jpg", alt: "Client wearing silver caps and fang-style bottom grillz" },
   { src: "assets/clients/look-17.jpg", alt: "Client wearing custom silver grillz set" },
-  { src: "assets/clients/look-18.jpg", alt: "Client wearing custom gold grillz set" },
   { src: "assets/clients/look-19.jpg", alt: "Client wearing custom silver tooth jewelry" },
   { src: "assets/clients/look-20.jpg", alt: "Client wearing custom grillz close-up" },
   { src: "assets/clients/look-21.jpg", alt: "Client wearing custom silver caps" },
@@ -3382,7 +3397,7 @@ function initServiceAddToCart(service) {
     toast(
       fulfillment === "dropoff"
         ? "Added to cart — DM @krownfrontz to arrange drop-off."
-        : "Added to cart — we’ll email the studio return address after payment."
+        : "Added to cart — we’ll email the return address after payment."
     );
   });
 }
@@ -3748,7 +3763,7 @@ function initCheckoutSuccess() {
         sessionStorage.removeItem("kf-checkout-flags");
         if (flags.postalRepolish) {
           lede.textContent =
-            "Your order is confirmed. We’ll email you shortly with the studio return address so you can post your grillz for repolishing, plus next steps for any other items.";
+            "Your order is confirmed. We’ll email you shortly with the return address so you can post your grillz for repolishing, plus next steps for any other items.";
         } else if (flags.dropoffRepolish) {
           lede.textContent =
             "Your order is confirmed. DM @krownfrontz on Instagram to arrange dropping off your set in Manchester, and we’ll email any other next steps.";

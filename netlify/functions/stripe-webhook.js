@@ -84,7 +84,7 @@ async function notifyBookingDeposit(session) {
   const email = session.customer_details?.email || session.customer_email || "unknown";
   const amount = ((session.amount_total || 0) / 100).toFixed(2);
   const summary = [
-    "Studio booking deposit paid",
+    "In-person booking deposit paid",
     `Email: ${email}`,
     `Deposit: GBP ${amount}`,
     `Session: ${session.id}`,

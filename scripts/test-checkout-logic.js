@@ -140,7 +140,7 @@ function assertShippingParity(zoneId, priced, zone) {
 
   const kitLine = findLineItem(priced, "Kit shipping (outbound)");
 
-  const finishLine = findLineItem(priced, "Finished grillz shipping");
+  const finishLine = findLineItem(priced, "Outbound shipping");
 
 
 
@@ -326,7 +326,7 @@ if (europeEuPriced.shipping.kitShipping === europeEuPriced.shipping.finishShippi
 
 const irelandPriced = buildPricedCheckout({ zoneId: "ireland", items: internationalCart });
 
-if (!findLineItem(irelandPriced, "Kit shipping (outbound)") || !findLineItem(irelandPriced, "Finished grillz shipping")) {
+if (!findLineItem(irelandPriced, "Kit shipping (outbound)") || !findLineItem(irelandPriced, "Outbound shipping")) {
 
   console.error("✗ ireland should have separate kit and finish shipping Stripe lines");
 
@@ -602,6 +602,44 @@ if (productPrice(vampireCanines, "argentium-silver") !== 125) {
   process.exit(1);
 }
 
+const gapFiller = findProduct("gap-filler");
+if (!gapFiller) {
+  console.error("✗ gap-filler product missing from catalog");
+  process.exit(1);
+}
+if (gapFiller.style !== "bar") {
+  console.error("✗ gap-filler should be in the bar style:", gapFiller.style);
+  process.exit(1);
+}
+if (gapFiller.toothRule !== "gap-filler") {
+  console.error("✗ gap-filler tooth rule mismatch:", gapFiller.toothRule);
+  process.exit(1);
+}
+if (productPrice(gapFiller, "sterling-silver") !== 90) {
+  console.error(
+    "✗ gap-filler sterling mismatch:",
+    productPrice(gapFiller, "sterling-silver"),
+    "expected 90"
+  );
+  process.exit(1);
+}
+if (productPrice(gapFiller, "dental-gold") !== 100) {
+  console.error(
+    "✗ gap-filler dental-gold mismatch:",
+    productPrice(gapFiller, "dental-gold"),
+    "expected 100"
+  );
+  process.exit(1);
+}
+if (productPrice(gapFiller, "argentium-silver") !== 100) {
+  console.error(
+    "✗ gap-filler argentium mismatch:",
+    productPrice(gapFiller, "argentium-silver"),
+    "expected 100"
+  );
+  process.exit(1);
+}
+
 const dualArchCheckout = buildPricedCheckout({
   zoneId: "uk",
   items: [
@@ -682,5 +720,8 @@ console.log("✓ diamond-canine moissanite price:", productPrice(diamondCanine, 
 console.log("✓ diamond-canine checkout with stone:", diamondGrillzLine.amountGbp);
 console.log("✓ diamond-window-canine-inlay dental-gold CZ:", productPrice(diamondWindowInlay, "dental-gold", "cubic-zirconia"));
 console.log("✓ hand-set diamond dental-gold matches argentium and not 9ct");
+console.log("✓ gap-filler sterling price:", productPrice(gapFiller, "sterling-silver"));
+console.log("✓ gap-filler dental-gold price:", productPrice(gapFiller, "dental-gold"));
+console.log("✓ gap-filler argentium-silver price:", productPrice(gapFiller, "argentium-silver"));
 
 

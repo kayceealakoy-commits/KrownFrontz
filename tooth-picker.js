@@ -95,6 +95,7 @@ const ToothPicker = (function () {
     if (ARCH_CANINES_IDS.includes(id)) return "arch-canines";
     if (CANINE_LATERAL_PAIR_IDS.includes(id)) return "canine-lateral-pair";
     if (CANINE_BAR_PAIR_IDS.includes(id)) return "canine-bar-pair";
+    if (id === "gap-filler") return "gap-filler";
     if (id === "bar-12") return "both-arch-contiguous";
     return "contiguous-front";
   }
@@ -103,6 +104,7 @@ const ToothPicker = (function () {
     const rule = getToothRule(product);
     const n = parseInt(product?.teeth || "1", 10);
     if (rule === "flexible") return 1;
+    if (rule === "gap-filler") return 2;
     return n;
   }
 
@@ -150,6 +152,9 @@ const ToothPicker = (function () {
     if (rule === "canine-bar-pair") {
       return "Select canine and lateral (inlay) on the upper, same side.";
     }
+    if (rule === "gap-filler") {
+      return "Select one gap: between the two centrals, or between a canine and lateral, on the upper or lower.";
+    }
     if (rule === "both-arch-contiguous") {
       const perArch = perArchCount(product);
       return `Select ${perArch} contiguous teeth on the upper and ${perArch} on the lower (${n} total).`;
@@ -173,6 +178,7 @@ const ToothPicker = (function () {
     const id = product?.id || "";
     const rule = getToothRule(product);
     if (id === "bar-12") return "both";
+    if (rule === "gap-filler") return "both";
     if (rule === "canine-bar-pair") return "upper";
     if (product?.style === "bar") return "lower";
     return "both";
@@ -209,6 +215,10 @@ const ToothPicker = (function () {
     if (reqPos !== null) return TOOTH_POSITIONS[id].position === reqPos;
     if (rule === "canine-lateral-pair" || rule === "canine-bar-pair") {
       return isCanineLateralPosition(TOOTH_POSITIONS[id].position);
+    }
+    if (rule === "gap-filler") {
+      const position = TOOTH_POSITIONS[id].position;
+      return position === 1 || isCanineLateralPosition(position);
     }
     if (
       rule === "both-side-canine-lateral" ||
@@ -431,6 +441,13 @@ const ToothPicker = (function () {
       if (isCanineBarPair(allowed)) return { ok: true };
       return { ok: false, message: "Select 2 teeth: canine and adjacent lateral." };
     }
+    if (rule === "gap-filler") {
+      if (isArchCentrals(allowed) || isCanineLateralPair(allowed)) return { ok: true };
+      return {
+        ok: false,
+        message: "Select one gap: between the two centrals, or between a canine and lateral.",
+      };
+    }
     if (rule === "both-side-canine-lateral") {
       if (isTwoQuadrantCanineLateral(allowed)) return { ok: true };
       return { ok: false, message: "Select canine and lateral on two sides." };
@@ -463,10 +480,27 @@ const ToothPicker = (function () {
       .join(", ");
   }
 
+  function formatGapFillerSummary(ids) {
+    if (isArchCentrals(ids)) {
+      const arch = toothArch(ids[0]) === "lower" ? "lower" : "upper";
+      return `Between ${arch} central teeth`;
+    }
+    if (isCanineLateralPair(ids)) {
+      const tooth = TOOTH_POSITIONS[ids[0]];
+      const arch = tooth.arch;
+      const side = SIDE_NAMES[tooth.side];
+      return `Between ${arch} ${side} canine and lateral`;
+    }
+    return formatLabels(ids);
+  }
+
   function formatSelectionSummary(product, ids) {
     const rule = getToothRule(product);
     if (rule === "both-arch-contiguous") {
       return ids.length ? formatAbbrevLabels(ids) : "";
+    }
+    if (rule === "gap-filler") {
+      return ids.length ? formatGapFillerSummary(ids) : "";
     }
     return formatLabels(ids);
   }
@@ -587,6 +621,21 @@ const ToothPicker = (function () {
       const next = [...selected, id];
       if (next.length > 2) return [id];
       return next;
+    }
+
+    if (rule === "gap-filler") {
+      const pos = TOOTH_POSITIONS[id].position;
+      if (pos === 1) {
+        const pair = toothArch(id) === "lower" ? ["LR1", "LL1"] : ["UR1", "UL1"];
+        const hasPair = pair.every((t) => selected.includes(t));
+        return hasPair ? [] : pair;
+      }
+      if (isCanineLateralPosition(pos)) {
+        const pair = sideCanineLateralPair(sameSide(id));
+        const hasPair = pair.every((t) => selected.includes(t));
+        return hasPair ? [] : pair;
+      }
+      return selected;
     }
 
     if (rule === "both-arch-contiguous") {

@@ -3258,6 +3258,14 @@ textarea {
     aspect-ratio: 4 / 3;
   }
 
+  .journey-panel-body {
+    padding-top: 32px;
+  }
+
+  .journey-page {
+    padding-top: 80px;
+  }
+
   .section {
     padding: 0 var(--page-pad) 48px;
   }
