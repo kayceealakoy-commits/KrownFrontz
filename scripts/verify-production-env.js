@@ -31,13 +31,26 @@ function parseNetlifyEnvList(output) {
   return vars;
 }
 
+function parseJsonPayload(output) {
+  const start = Math.min(
+    ...["{", "["].map((ch) => {
+      const idx = output.indexOf(ch);
+      return idx === -1 ? Number.POSITIVE_INFINITY : idx;
+    })
+  );
+  if (!Number.isFinite(start)) {
+    throw new Error("No JSON payload in netlify env:list output");
+  }
+  return JSON.parse(output.slice(start));
+}
+
 function loadNetlifyEnv() {
   try {
-    const output = execSync("npx netlify env:list --json", {
+    const output = execSync("npx netlify env:list --json --context production", {
       encoding: "utf8",
       stdio: ["pipe", "pipe", "pipe"],
     });
-    const parsed = JSON.parse(output);
+    const parsed = parseJsonPayload(output);
     if (Array.isArray(parsed)) {
       return Object.fromEntries(parsed.map((row) => [row.key, row.values?.production || row.value || ""]));
     }
@@ -61,7 +74,7 @@ function checkPresenceOnly(env) {
 function main() {
   const checkOnly = process.argv.includes("--check-only");
   const netlifyEnv = loadNetlifyEnv();
-  const source = netlifyEnv ? "Netlify (production context)" : "process.env";
+  const source = netlifyEnv ? "Netlify (production context, --context production)" : "process.env";
   const env = netlifyEnv || process.env;
 
   console.log(`Checking production env from ${source}...\n`);
